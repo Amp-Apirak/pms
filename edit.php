@@ -9,11 +9,11 @@
 
 
     <!----------------------------- start header ------------------------------->
-    <?php include("../up/templated/head.php"); ?>
+    <?php include("../pms/templated/head.php"); ?>
     <!----------------------------- end header --------------------------------->
 
     <!----------------------------- start menu ------------------------------->
-    <?php include("../up/templated/menu.php"); ?>
+    <?php include("../pms/templated/menu.php"); ?>
     <!----------------------------- end menu --------------------------------->
 
     <!----------------------------- start Time ------------------------------->
@@ -80,7 +80,7 @@
 
         if($file_upfile !=''){
             $file_tmp = $_FILES['file_upfile']['tmp_name'];
-            move_uploaded_file($file_tmp, "../up/example/$file_upfile");
+            move_uploaded_file($file_tmp, "../pms/example/$file_upfile");
 
         }else {
 
@@ -88,7 +88,7 @@
             
         }if ($file_test !=''){
             $file_tmp = $_FILES['file_test']['tmp_name'];
-            move_uploaded_file($file_tmp, "../up/test/$file_test");
+            move_uploaded_file($file_tmp, "../pms/test/$file_test");
         
         }else {
 
@@ -458,7 +458,7 @@
 
 
     <!----------------------------- start menu ------------------------------->
-    <?php include("../up/templated/footer.php"); ?>
+    <?php include("../pms/templated/footer.php"); ?>
     <!----------------------------- end menu --------------------------------->
 
     <!-- highlight -->

@@ -27,11 +27,11 @@
 
 
 
-        $target_dir = "../up/example/";
+        $target_dir = "../pms/example/";
         $target_file = $target_dir . basename($_FILES["file_upfile"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-        $target_dir1 = "../up/test/";
+        $target_dir1 = "../pms/test/";
         $target_file1 = $target_dir1 . basename($_FILES["file_test"]["name"]);
         $imageFileType1 = strtolower(pathinfo($target_file1, PATHINFO_EXTENSION));
         $file_test = $_FILES["file_test"]["name"] ;
@@ -100,11 +100,11 @@
 
             $file_upfile = $_FILES['file_upfile']['name'];
             $file_tmp = $_FILES['file_upfile']['tmp_name'];
-            move_uploaded_file($file_tmp, "../up/example/$file_upfile");
+            move_uploaded_file($file_tmp, "../pms/example/$file_upfile");
 
             $file_upfile1 = $_FILES['file_test']['name'];
             $file_tmp1 = $_FILES['file_test']['tmp_name'];
-            move_uploaded_file($file_tmp1, "../up/test/$file_upfile1");
+            move_uploaded_file($file_tmp1, "../pms/test/$file_upfile1");
 
 
 
