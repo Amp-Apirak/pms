@@ -44,7 +44,7 @@
             $sMessage .= "Status : ".$status."\n";
             $sMessage .= "Subject : ".$subject."\n\n";
 
-            $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/up/index.php \n";
+            $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/index.php \n";
 
 
             $chOne = curl_init(); 
