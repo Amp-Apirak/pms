@@ -52,7 +52,7 @@
             date_default_timezone_set("Asia/Bangkok");
 
             $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
-            $sMessage = "Uplevel ** ".$staff_edit." **Update Ticket** Job Notification\n\n";
+            $sMessage = "LAOS PMS ** ".$staff_edit." **Update Ticket** Job Notification\n\n";
             $sMessage .= "Type: ".$work_type." \n";
             $sMessage .= "Requeter: ".$requester." \n";
             $sMessage .= "Status : ".$status."\n";

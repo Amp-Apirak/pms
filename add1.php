@@ -38,7 +38,7 @@
 
 
             $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
-            $sMessage = "Uplevel ** ".$staff_crt." **Open Ticket** Job Notification\n\n";
+            $sMessage = "LAOS PMS** ".$staff_crt." **Open Ticket** Job Notification\n\n";
             $sMessage .= "Type: ".$work_type." \n";
             $sMessage .= "Requeter: ".$requester." \n";
             $sMessage .= "Status : ".$status."\n";
