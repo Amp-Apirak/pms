@@ -522,7 +522,7 @@
                                         <?php while ($res_search = mysqli_fetch_array($query_search)) { ?>
                                             
                                         <tr>
-                                        <td scope="col" class="text-nowrap " height="" width="100">
+                                        <td scope="col" class="text-nowrap text-center" height="" width="100">
                                         <?php
                                                     if($res_search["work_type"] =='Service'){
                                                         echo "<i class='badge badge-success nav-icon '>{$res_search["work_type"]}</i></a></i>";
@@ -531,9 +531,9 @@
                                                     }
                                                 ?>
                                         </td>
-                                        <td scope="col" class="text-nowrap  " height="" width="100"><?php echo $res_search["service"]; ?></td>
-                                        <td scope="col" class="text-nowrap  " height="" width="100"><?php echo $res_search["category"]; ?></td>
-                                        <td scope="col" class="text-nowrap  " height="" width="100"><?php echo $res_search["items"]; ?></td>
+                                        <td scope="col" class="text-nowrap  text-center" height="" width="100"><?php echo $res_search["service"]; ?></td>
+                                        <td scope="col" class="text-nowrap  text-center " height="" width="100"><?php echo $res_search["category"]; ?></td>
+                                        <td scope="col" class="text-nowrap  text-center" height="" width="100"><?php echo $res_search["items"]; ?></td>
                                          
                                             <td scope="col" class="text-nowrap text-center " height="" width="100">
                                                 <?php
