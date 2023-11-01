@@ -588,7 +588,15 @@
                                             <td scope="col" class="text-nowrap text-center " height="" width="100"><?php echo $res_search["date_crt"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width="100"><?php echo $res_search["staff_edit"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width="100"><?php echo $res_search["date_edit"]; ?></td>
-                                            <td scope="col" class="text-nowrap text-center " height="" width="18000" ><?php echo $res_search["detail"]; ?></td>
+                                            <td scope="col" class="text-nowrap text-center " height="" width="18000" >
+                                                <p>
+                                                    <?php $lam = explode(PHP_EOL, $res_search["detail"]);
+                                                        for ($i = 0; $i < count($lam); $i++) { ?>
+                                                        <?php echo $lam[$i]; ?></br>
+                                                    <?php } ?>
+                                                </p>
+                                        
+                                            </td>
                                             <td scope="col" class="text-nowrap text-center " height="" width="100"><?php echo $res_search["project_name"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width="100">
 
