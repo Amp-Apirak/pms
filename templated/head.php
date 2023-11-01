@@ -88,7 +88,7 @@
 
 
 </head>
-        <link rel="icon" type="image/x-icon" href="../pms/img/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="../pms/img/faviconn.ico">
 
     <div class="wrapper">
 
