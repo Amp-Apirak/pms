@@ -368,6 +368,22 @@
                                             </div>
                                             <!-- /.form-group -->
 
+                                            <!-- textarea -->
+                                            <div class="form-group">
+                                                <label>Descriptions</label>
+                                                <textarea class="form-control" name="detail" id="detail" rows="6"
+                                                    placeholder="รายละเอียด"><?= $rr->detail; ?></textarea>
+                                            </div>
+
+                                            
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Requester<span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" name="requester" class="form-control" value="<?= $rr->requester; ?>"
+                                                    id="exampleInputEmail1" placeholder="ผู้ร้องขอ" required>
+                                            </div>
+                                            <!-- /.form-group -->
+
                                             <div class="form-group">
                                                 <label for="file_test">Image Test <span class="text-danger"> (Only picture
                                                         and upload-max-filesize 20M*)</span></label>
@@ -382,13 +398,6 @@
                                             <!-- /.form-group -->
 
 
-                                            <!-- textarea -->
-                                            <div class="form-group">
-                                                <label>Descriptions</label>
-                                                <textarea class="form-control" name="detail" id="detail" rows="6"
-                                                    placeholder="รายละเอียด"><?= $rr->detail; ?></textarea>
-                                            </div>
-
                                              <!-- textarea -->
                                              <div class="form-group">
                                                 <label>Commect</label>
@@ -397,13 +406,6 @@
                                             </div>
 
 
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Requester<span
-                                                        class="text-danger">*</span></label>
-                                                <input type="text" name="requester" class="form-control" value="<?= $rr->requester; ?>"
-                                                    id="exampleInputEmail1" placeholder="ผู้ร้องขอ" required>
-                                            </div>
-                                            <!-- /.form-group -->
 
                                                  <!-- ดึงข้อมูล Folder มาจาก folder_doc -->
                                              <?php
