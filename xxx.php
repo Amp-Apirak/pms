@@ -42,6 +42,12 @@
         $category = $_POST['category_name'];
         $project_name = $_POST['project_name'];
 
+        $result = $_POST['result'];
+        $work_id = $_POST['work_id'];
+
+
+
+
         $file_upfile = $_FILES['file_upfile']['name'];
         $file_test = $_FILES['file_test']['name'];
         
@@ -102,6 +108,9 @@
                             `detail` = '$detail', `requester` = '$requester',`project_name` = '$project_name', 
                             `staff_edit` = '$staff_edit', `service` = '$service', `items` = '$items', `category` = '$category', `file_upfile` = '$file_upfile' WHERE work_id=" . $_GET['id'];
                             $result = $conn->query($sql);
+
+            $sqll =   "INSERT INTO `tb_log` (`work_id`, `result`,`staff_edit`)
+                            VALUES ($work_id, '$result', '$staff_edit')";
 
                             
                             //print_r($_POST);
@@ -390,6 +399,8 @@
                                                 <label>Commect</label>
                                                 <textarea class="form-control" name="result" id="result" rows="6"
                                                     placeholder=""></textarea>
+
+                                                <input type="int" class="custom-file-input" id="work_id"  value="<?= $rr->work_id; ?>" name="work_id">
                                             </div>
 
                                             <div class="form-group">
