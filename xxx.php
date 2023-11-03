@@ -42,7 +42,7 @@
         $category = $_POST['category_name'];
         $project_name = $_POST['project_name'];
 
-        $result = $_POST['result'];
+        $add_task = $_POST['add_task'];
         $work_id = $_POST['work_id'];
 
 
@@ -57,7 +57,7 @@
             error_reporting(E_ALL);
             date_default_timezone_set("Asia/Bangkok");
 
-            $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
+            // $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
             $sMessage = "LAOS PMS ** ".$staff_edit." **Update Ticket** Job Notification\n\n";
             $sMessage .= "Type: ".$work_type." \n";
             $sMessage .= "Requeter: ".$requester." \n";
@@ -109,8 +109,9 @@
                             `staff_edit` = '$staff_edit', `service` = '$service', `items` = '$items', `category` = '$category', `file_upfile` = '$file_upfile' WHERE work_id=" . $_GET['id'];
                             $result = $conn->query($sql);
 
-            $sqll =   "INSERT INTO `tb_log` (`work_id`, `result`,`staff_edit`)
-                            VALUES ($work_id, '$result', '$staff_edit')";
+            $sqll =   "INSERT INTO `tb_log` (`work_id`, `add_task`,`staff_edit`,`v_status`)
+                            VALUES ($work_id, '$add_task', '$staff_edit', '$status')";
+                            $resultt = $conn->query($sqll);
 
                             
                             //print_r($_POST);
@@ -389,18 +390,16 @@
                                                     <label class="custom-file-label" for="file_test"><?= $rr->file_test; ?></label>
 
                                                     <input type="hidden" class="custom-file-input" id="file_test2"  value="<?= $rr->file_test; ?>" name="file_test2">
+                                                    <input type="hidden" class="custom-file-input" id="work_id"  value="<?= $rr->work_id; ?>" name="work_id">
                                                 </div>
                                             </div>
                                             <!-- /.form-group -->
 
-
-                                             <!-- textarea -->
-                                             <div class="form-group">
-                                                <label>Commect</label>
-                                                <textarea class="form-control" name="result" id="result" rows="6"
+                                            <!-- textarea -->
+                                            <div class="form-group">
+                                                <label>Update/Commect (Add Task)</label>
+                                                <textarea class="form-control" name="add_task" id="add_task" rows="6"
                                                     placeholder=""></textarea>
-
-                                                <input type="int" class="custom-file-input" id="work_id"  value="<?= $rr->work_id; ?>" name="work_id">
                                             </div>
 
                                             <div class="form-group">

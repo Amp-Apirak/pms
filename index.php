@@ -482,6 +482,11 @@
                             <a href="add.php" class="btn btn-success btn-sm float-right"> Add <i class=""></i></a>
                         </div><br>
 
+                        <?php
+                                                    /* แสดงข้อมูล */
+                                                    $rs = $conn->query("SELECT * FROM work WHERE work_id=" . $_GET['id']);
+                                                    $r = $rs->fetch_object()
+                                                ?>
 
 
 
@@ -520,7 +525,7 @@
                                     <tbody id="myTable">
                                         
                                         <?php while ($res_search = mysqli_fetch_array($query_search)) { ?>
-                                            
+                                                  
                                         <tr>
                                         <td scope="col" class="text-nowrap text-center" height="" width="100">
                                         <?php
@@ -551,7 +556,14 @@
                                                 ?>
                                             </td>
 
-                                            <td  scope="col" class="text-nowrap " height="" width="100"> <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" > <?php echo $res_search["subject"]; ?></a></td> 
+                                            <td  scope="col" class="text-nowrap " height="" width="100"> <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" > <?php echo $res_search["subject"]; ?></a>
+                                               
+                                                  
+                                            
+                                            <!-- --------- ทำต่อในส่วนนี้ให้แสดงผล ---------- -->
+
+
+                                            </td> 
                                             
                                             <td  scope="col" class="text-nowrap text-center" height="" width="100">
                                                 <a href="../pms/example/<?php echo $res_search["file_upfile"]; ?>" data-lightbox="image-1" data-title="../pms/example/<?php echo $res_search["file_upfile"]; ?>  (<?php echo $res_search["file_upfile"]; ?>)" class="img-fluid "   >

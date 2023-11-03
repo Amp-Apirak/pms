@@ -205,7 +205,8 @@
                                     <thead>
                                         <tr>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">#</th>
-                                            <th scope="col" class="text-nowrap text-center " height="" width="">Description</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="">Status</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="">Update/Commect</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Staff</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Date/Time</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Action</th>
@@ -223,8 +224,24 @@
                                             ?>
                                         <tr>
                                             <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $i++ ?></td>
+                                            <td scope="col" class="text-nowrap text-center " height="" width="">
+                                            <?php
+                                                    if($res_search["v_status"] =='Wiating for approve'){
+                                                        echo "<span class='badge badge-primary'>{$res_search["v_status"]}</span>";
+                                                    }elseif($res_search["v_status"] =='On Process'){
+                                                        echo "<span class='badge badge-warning'>{$res_search["v_status"]}</span>";
+                                                    }elseif($res_search["v_status"] =='On-Hold'){
+                                                        echo "<span class='badge badge-info'>{$res_search["v_status"]}</span>";
+                                                    }elseif($res_search["v_status"] =='Done'){
+                                                        echo "<span class='badge badge-success'>{$res_search["v_status"]}</span>";
+                                                    }elseif($res_search["v_status"] =='Loss'){
+                                                        echo "<span class='badge badge-danger'>{$res_search["v_status"]}</span>";
+                                                    }
+                                                ?>
+       
+                                        </td>
                                             <td scope="col" class="  " height="" width="">
-                                                <b><?php echo $res_search["task"]; ?></b> | <?php echo $res_search["result"]; ?>
+                                                <b><?php echo $res_search["add_task"]; ?></b> 
                                             </td>
                                             <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["staff_edit"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["date_edit"]; ?></td>
@@ -239,7 +256,8 @@
                                     <tfoot>
                                         <tr>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">#</th>
-                                            <th scope="col" class="text-nowrap text-center " height="" width="">Description</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="">Status</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="">Update/Commect</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Staff</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Date/Time</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Action</th>
@@ -308,13 +326,13 @@
     <?php
      if (isset($_POST['submit'])) { /* ถ้า POST มีการกด Submit ให้ทำส่วนล่าง */
 
-        $task = $_POST['task'];
-        $result = $_POST['result'];
+        $v_status = $_POST['v_status'];
+        $add_task = $_POST['add_task'];
         $work_id = $_POST['work_id'];
         $staff_edit = $_POST['staff_edit'];
 
     
-            $sql =  "INSERT INTO `tb_log` (`task`,`result`,`work_id`,`staff_edit` )  VALUES ('$task','$result','$work_id','$staff_edit')";
+            $sql =  "INSERT INTO `tb_log` (`v_status`,`add_task`,`work_id`,`staff_edit` )  VALUES ('$v_status','$add_task','$work_id','$staff_edit')";
             $result = $conn->query($sql);
 
             //print_r($sql);
@@ -369,21 +387,31 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col col-12">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Task<span class="text-danger">*</span></label>
-                                                <input type="text" name="task" class="form-control"id="exampleInputEmail1" placeholder="" required>
-                                                <input type="hidden" name="work_id" value="<?php echo $_GET['id']; ?>" class="form-control"id="exampleInputEmail1" placeholder="" >
-                                            </div>
-                                            <!-- /.form-group -->
+
+                                <?php
+                                            /* แสดงข้อมูล */
+                                    $rl = $conn->query("SELECT * FROM work WHERE work_id=" . $_GET['id']);
+                                    $rr = $rl->fetch_object()
+                                  ?>
+
+                                    <div class="col col-12 mb-4">
+                                                <label>Status<span class="text-danger"> (กรณีแก้ไขแล้วให้เปลี่ยนสถานะ เป็น Complated)</span></label>
+                                                <select class="form-control select2" name="v_status"
+                                                    style="width: 100%;">
+                                                    <option selected="selected"><?= $rr->status; ?></option>
+                                                        <option>On Process</option>
+                                                        <option>Done</option>
+                                                </select>
                                     </div>
+                                            <!-- /.form-group -->
+                                            
                                 </div>
                                 <div class="row">
-                                    <div class="col col-12">
+                                    <div class="col col-12 ">
                                         <!-- textarea -->
                                         <div class="form-group">
-                                                <label>Descriptions<span class="text-danger">*</span></label>
-                                                <textarea class="form-control" name="result" id="result" rows="6" required placeholder="รายละเอียด"></textarea>
+                                                <label>Update/Commect (Add Task)<span class="text-danger">*</span></label>
+                                                <textarea class="form-control" name="add_task" id="add_task" rows="6" required placeholder="รายละเอียด"></textarea>
                                         </div>
                                     </div>
                                 </div>
