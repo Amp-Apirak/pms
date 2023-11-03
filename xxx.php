@@ -394,7 +394,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Status<span class="text-danger">(กรณีแก้ไขแล้วให้เปลี่ยนสถานะ เป็น Complated)*</span></label>
+                                                <label>Status<span class="text-danger"> (กรณีแก้ไขแล้วให้เปลี่ยนสถานะ เป็น Complated)*</span></label>
                                                 <select class="form-control select2" name="status"
                                                     style="width: 100%;">
                                                     <option selected="selected"><?= $rr->status; ?></option>
