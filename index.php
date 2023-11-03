@@ -205,6 +205,9 @@
                                 ?>
 
 
+
+
+
                         <!-- Main content -->
                         <section class="content">
                             <div class="container-fluid">
@@ -482,20 +485,16 @@
                             <a href="add.php" class="btn btn-success btn-sm float-right"> Add <i class=""></i></a>
                         </div><br>
 
-                        <?php
-                                                    /* แสดงข้อมูล */
-                                                    $rs = $conn->query("SELECT * FROM work WHERE work_id=" . $_GET['id']);
-                                                    $r = $rs->fetch_object()
-                                                ?>
-
-
-
+             
                         <div class="card">
                             <div class="card-header">
                                 <div class="container-fluid">
                                     <h3 class="card-title">Task Management</h3>
                                 </div>
                             </div>
+
+
+
 
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -556,12 +555,17 @@
                                                 ?>
                                             </td>
 
-                                            <td  scope="col" class="text-nowrap " height="" width="100"> <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" > <?php echo $res_search["subject"]; ?></a>
-                                               
-                                                  
-                                            
-                                            <!-- --------- ทำต่อในส่วนนี้ให้แสดงผล ---------- -->
+                                            <td  scope="col" class="text-nowrap " height="" width="100"> 
+                                                    <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" > <?php echo $res_search["subject"]; ?></a> <p>
 
+                                                    <?php
+                                                    if($res_search["add_task"] ==''){
+                                                        echo " ";
+                                                    }else{
+                                                        echo "<span class='badge badge-warning'>Comment: {$res_search["add_task"]}</span> <span class='badge badge-info'>{$res_search["staff_edit"]} | {$res_search["date_edit"]}</span>";
+                                                    }
+                                                ?>
+                                                    
 
                                             </td> 
                                             
@@ -629,6 +633,7 @@
                                             </td>
                                         </tr>
                                         <?php } ?>
+                                        
                                     </tbody>
 
                                     <tfoot>
