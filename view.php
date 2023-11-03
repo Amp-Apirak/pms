@@ -102,60 +102,69 @@
                             <?php echo $res_search["project_name"]; ?>  
 
                             <div class="row ">
-                                <div class="col-sm-4 invoice-col">
+                                <div class="col-sm-8 invoice-col">
                                 <b>Detail :</b><br>
                                     <address>
-                                        <?php echo $res_search["detail"]; ?>
+                                                <?php $lam = explode(PHP_EOL, $res_search["detail"]);
+                                                        for ($i = 0; $i < count($lam); $i++) { ?>
+                                                        <?php echo $lam[$i]; ?></br>
+                                                    <?php } ?>
+                                        
                                     </address>
                                 </div>
                                 <!-- /.col -->
+
                                 <div class="col-sm-4 invoice-col">
-                                    <td  scope="col" class="text-nowrap text-center" height="" width="100">
-                                            <a href="../pms/example/<?php echo $res_search["file_upfile"]; ?>" data-lightbox="image-1" data-title="../pms/example/<?php echo $res_search["file_upfile"]; ?>  (<?php echo $res_search["file_upfile"]; ?>)" class="img-fluid "   >
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <b>Requester :</b> <?php echo $res_search["requester"]; ?><br>
+                                            <b>Staff :</b> <?php echo $res_search["staff_crt"]; ?><br>
+                                            <b>Status:</b>
                                                 <?php
-                                                    if($res_search["file_upfile"] ==''){
-                                                         echo "<span class='badge badge-warning'>No Image</span>";
-                                                    }elseif($res_search["file_upfile"]){
-                                                        echo '<img class="imgx"  width="120" height="120" src="../pms/example/'.$res_search["file_upfile"].'"';
-                                                    }
+                                                                if($res_search["status"] =='On Process'){
+                                                                    echo "<span class='badge badge-warning'>{$res_search["status"]}</span>";
+                                                                }elseif($res_search["status"] =='On-Hold'){
+                                                                    echo "<span class='badge badge-info'>{$res_search["status"]}</span>";
+                                                                }elseif($res_search["status"] =='Done'){
+                                                                    echo "<span class='badge badge-success'>{$res_search["status"]}</span>";
+                                                                }
+                                                            ?>
+                                                <br>
+                                        
+                                                <?php if ($res_search["status"] =='On Process') { ?>
+                                                    <div class="col col-12 mb-5">
+                                                        <a href="view_add.php?id=<?php echo $_GET['id']; ?>" class="btn btn-primary bg-gradient-primary btn-sm float-right" data-toggle="modal" data-target="#editbtn"><i class="fa fa-plus"></i> Add Productivity </a>
+                                                    </div>
+                                                <?php } ?>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm mt-3">
+                                            <td  scope="col" class="text-nowrap text-center" height="" width="100">
+                                                <a href="../pms/example/<?php echo $res_search["file_upfile"]; ?>" data-lightbox="image-1" data-title="../pms/example/<?php echo $res_search["file_upfile"]; ?>  (<?php echo $res_search["file_upfile"]; ?>)" class="img-fluid "   >
+                                                    <?php
+                                                        if($res_search["file_upfile"] ==''){
+                                                            echo "<span class='badge badge-warning'>No Image</span>";
+                                                        }elseif($res_search["file_upfile"]){
+                                                            echo '<img class="imgx"  width="120" height="120" src="../pms/example/'.$res_search["file_upfile"].'"';
+                                                        }
+                                                    ?>
+                                                </a>
+                                                
+                                            </td> 
+                                        <td  scope="col" class="text-nowrap text-center" height="" width="120">
+                                            <a href="../pms/test/<?php echo $res_search["file_test"]; ?>" data-lightbox="image-1" data-title="../pms/test/<?php echo $res_search["file_test"]; ?>  (<?php echo $res_search["file_test"]; ?>)" class="img-fluid "   >
+                                                <?php
+                                                    if($res_search["file_test"] ==''){
+                                                        echo "<span class='badge badge-warning'>No Image</span>";
+                                                    }elseif($res_search["file_test"]){
+                                                        echo '<img class="imgx"  width="120" height="100" src="../pms/test/'.$res_search["file_test"].'"';
+                                                        }
                                                 ?>
                                             </a>
-                                            
-                                        </td> 
-                                    <td  scope="col" class="text-nowrap text-center" height="" width="120">
-                                        <a href="../pms/test/<?php echo $res_search["file_test"]; ?>" data-lightbox="image-1" data-title="../pms/test/<?php echo $res_search["file_test"]; ?>  (<?php echo $res_search["file_test"]; ?>)" class="img-fluid "   >
-                                            <?php
-                                                if($res_search["file_test"] ==''){
-                                                    echo "<span class='badge badge-warning'>No Image</span>";
-                                                }elseif($res_search["file_test"]){
-                                                     echo '<img class="imgx"  width="120" height="100" src="../pms/test/'.$res_search["file_test"].'"';
-                                                    }
-                                            ?>
-                                        </a>
-                                    </td>
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-sm-4 invoice-col">
-                                    <b>Requester :</b> <?php echo $res_search["requester"]; ?><br>
-                                    <b>Staff :</b> <?php echo $res_search["staff_crt"]; ?><br>
-                                    <b>Status:</b>
-                                    <?php
-                                                    if($res_search["status"] =='On Process'){
-                                                        echo "<span class='badge badge-warning'>{$res_search["status"]}</span>";
-                                                    }elseif($res_search["status"] =='On-Hold'){
-                                                        echo "<span class='badge badge-info'>{$res_search["status"]}</span>";
-                                                    }elseif($res_search["status"] =='Done'){
-                                                        echo "<span class='badge badge-success'>{$res_search["status"]}</span>";
-                                                    }
-                                                ?>
-                                    <br>
-                                
-                                <?php if ($res_search["status"] =='On Process') { ?>
-                                    <div class="col col-12 mb-5">
-                                        <a href="view_add.php?id=<?php echo $_GET['id']; ?>" class="btn btn-primary bg-gradient-primary btn-sm float-right" data-toggle="modal" data-target="#editbtn"><i class="fa fa-plus"></i> Add Productivity </a>
+                                        </td>
+                                        </div>
                                     </div>
-                                <?php } ?>
-                                    
                                 </div>
                                 <!-- /.col -->
                             </div>
@@ -241,7 +250,7 @@
        
                                         </td>
                                             <td scope="col" class="  " height="" width="">
-                                                <b><?php echo $res_search["add_task"]; ?></b> 
+                                                <?php echo $res_search["add_task"]; ?> 
                                             </td>
                                             <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["staff_edit"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["date_edit"]; ?></td>
