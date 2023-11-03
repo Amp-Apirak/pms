@@ -373,7 +373,7 @@
                                             <!-- /.form-group -->
 
                                             <div class="form-group">
-                                                <label for="file_test">Image Test <span class="text-danger"> (แนบไฟล์ภาพผลการดำเนินการ*)</span></label>
+                                                <label for="file_test">Image Test <span class="text-danger"> (แนบไฟล์ภาพผลการดำเนินการ)</span></label>
                                                 <div class="custom-file">
 
                                                     <input type="file" class="custom-file-input" id="file_test" name="file_test">
@@ -393,7 +393,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Status<span class="text-danger"> (กรณีแก้ไขแล้วให้เปลี่ยนสถานะ เป็น Complated)*</span></label>
+                                                <label>Status<span class="text-danger"> (กรณีแก้ไขแล้วให้เปลี่ยนสถานะ เป็น Complated)</span></label>
                                                 <select class="form-control select2" name="status"
                                                     style="width: 100%;">
                                                     <option selected="selected"><?= $rr->status; ?></option>
@@ -412,7 +412,7 @@
                                             $query_service = mysqli_query($conn, $_sql_service);
                                             ?>
                                                     <div class="form-group">
-                                                        <label>Operation Staff <span class="text-danger">*</span></label>
+                                                        <label>Operation Staff <span class="text-danger"> (บังคับเลือกชื่อ])*</span></label>
                                                         <select class="custom-select select2 " required width=""
                                                             name="staff_edit">
                                                             <option selected="selected"></option>
