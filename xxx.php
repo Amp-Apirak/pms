@@ -334,17 +334,6 @@
                                             $rr = $rl->fetch_object()
                                             ?>
 
-                                            <div class="form-group">
-                                                <label>Status<span class="text-danger">*</span></label>
-                                                <select class="form-control select2" name="status"
-                                                    style="width: 100%;">
-                                                    <option selected="selected"><?= $rr->status; ?></option>
-                                                        <option>On Process</option>
-                                                        <option>Done</option>
-                                                </select>
-                                            </div>
-                                            <!-- /.form-group -->
-
 
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Subject<span
@@ -385,8 +374,7 @@
                                             <!-- /.form-group -->
 
                                             <div class="form-group">
-                                                <label for="file_test">Image Test <span class="text-danger"> (Only picture
-                                                        and upload-max-filesize 20M*)</span></label>
+                                                <label for="file_test">Image Test <span class="text-danger"> (แนบไฟล์ภาพผลการดำเนินการ*)</span></label>
                                                 <div class="custom-file">
 
                                                     <input type="file" class="custom-file-input" id="file_test" name="file_test">
@@ -404,6 +392,17 @@
                                                 <textarea class="form-control" name="result" id="result" rows="6"
                                                     placeholder=""></textarea>
                                             </div>
+
+                                            <div class="form-group">
+                                                <label>Status<span class="text-danger">*</span>(กรณีแก้ไขแล้วให้เปลี่ยนสถานะ เป็น Complated)</label>
+                                                <select class="form-control select2" name="status"
+                                                    style="width: 100%;">
+                                                    <option selected="selected"><?= $rr->status; ?></option>
+                                                        <option>On Process</option>
+                                                        <option>Done</option>
+                                                </select>
+                                            </div>
+                                            <!-- /.form-group -->
 
 
 
