@@ -345,8 +345,7 @@
 
 
                                             <div class="form-group">
-                                                <label for="file_upfile">Image <span class="text-danger"> (Only picture
-                                                        and upload-max-filesize 20M*)</span></label>
+                                                <label for="file_upfile">Image <span class="text-danger"></span></label>
                                                 <div class="custom-file">
                                                     
                                                     <input type="file" class="custom-file-input" id="file_upfile" name="file_upfile" >
