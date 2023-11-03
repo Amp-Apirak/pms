@@ -373,7 +373,7 @@
                                             <!-- /.form-group -->
 
                                             <div class="form-group">
-                                                <label for="file_test">Image Test <span class="text-danger"> (แนบไฟล์ภาพผลการดำเนินการ)</span></label>
+                                                <label for="file_test">Image Test <span class="text-danger"> (แนบไฟล์ภาพผลการดำเนินการ >หากมี<)</span></label>
                                                 <div class="custom-file">
 
                                                     <input type="file" class="custom-file-input" id="file_test" name="file_test">
@@ -412,7 +412,7 @@
                                             $query_service = mysqli_query($conn, $_sql_service);
                                             ?>
                                                     <div class="form-group">
-                                                        <label>Operation Staff <span class="text-danger"> (บังคับเลือกชื่อ])*</span></label>
+                                                        <label>Operation Staff <span class="text-danger"> (บังคับเลือกชื่อ)*</span></label>
                                                         <select class="custom-select select2 " required width=""
                                                             name="staff_edit">
                                                             <option selected="selected"></option>
