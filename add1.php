@@ -47,6 +47,10 @@
             $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/index.php \n"; 
 
 
+            $sMessage .= "@all";
+         
+
+
             $chOne = curl_init(); 
             curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify"); 
             curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0); 

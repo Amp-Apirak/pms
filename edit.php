@@ -71,7 +71,9 @@
             $sMessage .= "------------------------------ \n";
             $sMessage .= "คำแนะนำ : ".$add_task."\n\n";
 
-            $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/view.php?id=$_GET[id] \n";
+            $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/view.php?id=$_GET[id] \n\n";
+
+            $sMessage .= "@All \n";
 
             
             $chOne = curl_init(); 

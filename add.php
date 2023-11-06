@@ -71,7 +71,7 @@
 
                                             <div class="form-group">
                                                 <label>Type<span class="text-danger">*</span></label>
-                                                <select class="form-control select2" name="work_type"
+                                                <select class="form-control select2" required name="work_type"
                                                     style="width: 100%;">
                                                     <option selected="selected"></option>
                                                     <option>Incident</option>
