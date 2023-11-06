@@ -201,6 +201,8 @@
                                                     <option selected="selected"></option>
                                                     <option>On Process</option>
                                                     <option>Done</option>
+                                                    <option>Pending</option>
+                                                    <option>Cancel</option>
                                                 </select>
                                             </div>
                                             <!-- /.form-group -->

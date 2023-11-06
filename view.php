@@ -239,11 +239,11 @@
                                                         echo "<span class='badge badge-primary'>{$res_search["v_status"]}</span>";
                                                     }elseif($res_search["v_status"] =='On Process'){
                                                         echo "<span class='badge badge-warning'>{$res_search["v_status"]}</span>";
-                                                    }elseif($res_search["v_status"] =='On-Hold'){
+                                                    }elseif($res_search["v_status"] =='Pending'){
                                                         echo "<span class='badge badge-info'>{$res_search["v_status"]}</span>";
                                                     }elseif($res_search["v_status"] =='Done'){
                                                         echo "<span class='badge badge-success'>{$res_search["v_status"]}</span>";
-                                                    }elseif($res_search["v_status"] =='Loss'){
+                                                    }elseif($res_search["v_status"] =='Cancel'){
                                                         echo "<span class='badge badge-danger'>{$res_search["v_status"]}</span>";
                                                     }
                                                 ?>

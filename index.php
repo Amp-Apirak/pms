@@ -545,11 +545,11 @@
                                                         echo "<span class='badge badge-primary'>{$res_search["status"]}</span>";
                                                     }elseif($res_search["status"] =='On Process'){
                                                         echo "<span class='badge badge-warning'>{$res_search["status"]}</span>";
-                                                    }elseif($res_search["status"] =='On-Hold'){
+                                                    }elseif($res_search["status"] =='Pending'){
                                                         echo "<span class='badge badge-info'>{$res_search["status"]}</span>";
                                                     }elseif($res_search["status"] =='Done'){
                                                         echo "<span class='badge badge-success'>{$res_search["status"]}</span>";
-                                                    }elseif($res_search["status"] =='Loss'){
+                                                    }elseif($res_search["status"] =='Cancel'){
                                                         echo "<span class='badge badge-danger'>{$res_search["status"]}</span>";
                                                     }
                                                 ?>
