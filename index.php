@@ -293,7 +293,7 @@
 
                                     <div class="col-lg-3 col-6">
                                         <!-- small box -->
-                                        <div class="small-box bg-success">
+                                        <div class="small-box bg-denger">
 
                                              <!-- Qeury Count All Service -->
                                              <?php 
@@ -302,17 +302,17 @@
                                                     if (!empty($search) || ($status != "") || ($requester != "") || ($work_type != "") || ($service != "")|| ($category != "")|| ($items != "")) {
 
                                                         $query2 = "SELECT COUNT(`status`) as AMP FROM work";
-                                                        $query1 = $query2 . $_where . "AND `status` = 'Done'" . " ORDER BY work_id DESC";
+                                                        $query1 = $query2 . $_where . "AND `status` = 'Pending'" . " ORDER BY work_id DESC";
 
                                                     }else{
 
-                                                        $query2 = "SELECT COUNT(`status`) as AMP FROM work  WHERE `status` = 'Done'";
+                                                        $query2 = "SELECT COUNT(`status`) as AMP FROM work  WHERE `status` = 'Pending'";
                                                         $query1 = $query2 . $_where . "" . " ORDER BY work_id DESC";
 
                                                     }
 
                                                 }else{
-                                                        $query2 = "SELECT COUNT(`status`) as AMP FROM work  WHERE `status` = 'Done'";
+                                                        $query2 = "SELECT COUNT(`status`) as AMP FROM work  WHERE `status` = 'Pending'";
                                                         $query1 = $query2 . "" . " ORDER BY work_id DESC";
                                                         
                                                     }
@@ -327,7 +327,7 @@
                                             <div class="inner">
                                                 <h3><?php echo number_format( $a, 0 ) ; ?></h3>
 
-                                                <p>Done</p>
+                                                <p>Pending</p>
                                             </div>
                                             <div class="icon">
                                                 <i class="ion ion-person-add"></i>
@@ -341,7 +341,7 @@
 
                                     <div class="col-lg-3 col-6">
                                         <!-- small box -->
-                                        <div class="small-box bg-denger">
+                                        <div class="small-box bg-success">
 
                                              <!-- Qeury Count All Service -->
                                              <?php 
