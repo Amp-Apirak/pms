@@ -535,9 +535,9 @@
                                                     }
                                                 ?>
                                         </td>
-                                        <td scope="col" class="text-nowrap  text-center" height="" width="100"><?php echo $res_search["service"]; ?></td>
-                                        <td scope="col" class="text-nowrap  text-center " height="" width="100"><?php echo $res_search["category"]; ?></td>
-                                        <td scope="col" class="text-nowrap  text-center" height="" width="100"><?php echo $res_search["items"]; ?></td>
+                                        <td scope="col" class=" text-center " height="" width="100"><?php echo $res_search["service"]; ?></td>
+                                        <td scope="col" class=" text-center " height="" width="100"><?php echo $res_search["category"]; ?></td>
+                                        <td scope="col" class=" text-center " height="" width="100"><?php echo $res_search["items"]; ?></td>
                                          
                                             <td scope="col" class="text-nowrap text-center " height="" width="100">
                                                 <?php
