@@ -603,7 +603,7 @@
                                                 ?>
                                             </td>
 
-                                            <td  scope="col" class="" height="" width="50"> 
+                                            <td  scope="col" class="text-overflow" height="" width="50"> 
                                                     <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" > <?php echo $res_search["subject"]; ?></a> <p>
 
                                                     <?php
