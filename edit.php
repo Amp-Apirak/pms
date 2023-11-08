@@ -101,15 +101,19 @@
                                         date_default_timezone_set("Asia/Bangkok");
                             
                                         $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
-                                        $sMessage = "LAOS PMS ** ".$staff_edit." **Update Ticket**\n\n";
-                                        $sMessage .= "<*>Status : ".$status."<*>\n\n";
+                                        $sMessage = "".$staff_crt." **Open Ticket** \n\n";
+
+                                        $sMessage .= "Category: ".$category." \n";
                                         $sMessage .= "Type: ".$work_type." \n";
-                                        $sMessage .= "Requeter: ".$requester." \n";
-                                        $sMessage .= "เรื่อง : ".$subject."\n\n";
-                                        $sMessage .= "รายละเอียด : ".$detail."\n";
-                                        $sMessage .= "------------------------------ \n";
-                                        $sMessage .= "คำแนะนำ : ".$add_task."\n\n";
-                            
+                                        $sMessage .= "Items: ".$items." \n\n";
+                                        $sMessage .= "-------------------------- \n";
+                                        $sMessage .= "Status : ".$status."\n";
+                                        $sMessage .= "-------------------------- \n";
+                                        $sMessage .= "Owner: ".$requester." \n";
+                                        $sMessage .= "Subject : ".$subject."\n\n";
+                                        $sMessage .= "-------------------------- \n";
+                                        $sMessage .= "คำแนะ/แก้ไข : ".$add_task."\n\n";
+
                                         $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/view.php?id=$_GET[id] \n\n";
                                         $sMessage .= "@All \n";
                             
