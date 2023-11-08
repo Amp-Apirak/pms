@@ -603,14 +603,14 @@
                                                 ?>
                                             </td>
 
-                                            <td  scope="col" class="" height="" width="50"> 
-                                                    <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" > <?php echo $res_search["subject"]; ?></a> <p>
+                                            <td  scope="col" class="" id="mylayout_2"> 
+                                                    <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" > <?php echo $res_search["subject"]; ?></a>
 
                                                     <?php
                                                     if($res_search["add_task"] ==''){
                                                         echo " ";
                                                     }else{
-                                                        echo "<span class='badge badge-warning'>Comment: {$res_search["add_task"]}</span> <br>
+                                                        echo "<div><span class='badge badge-warning'><b><u>Comment:</b></u></span> <small>{$res_search["add_task"]}</small> </div>
                                                         <span class='badge badge-info'>{$res_search["staff_edit"]} | {$res_search["date_edit"]}</span>";
                                                     }
                                                     ?>
