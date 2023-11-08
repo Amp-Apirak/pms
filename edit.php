@@ -377,7 +377,7 @@
 
                                             
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Requester<span
+                                                <label for="exampleInputEmail1">Owner<span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" name="requester" class="form-control" value="<?= $rr->requester; ?>"
                                                     id="exampleInputEmail1" placeholder="ผู้ร้องขอ" required>

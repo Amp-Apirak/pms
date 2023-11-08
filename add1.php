@@ -117,7 +117,7 @@
                    $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
                    $sMessage = "LAOS PMS** ".$staff_crt." **Open Ticket** Job Notification\n\n";
                    $sMessage .= "Type: ".$work_type." \n";
-                   $sMessage .= "Requeter: ".$requester." \n";
+                   $sMessage .= "Owner: ".$requester." \n";
                    $sMessage .= "Status : ".$status."\n";
                    $sMessage .= "Subject : ".$subject."\n\n";
        

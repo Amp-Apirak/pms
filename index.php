@@ -445,7 +445,7 @@
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <label>Requester</label>
+                                                            <label>Owner</label>
                                                             <select class="custom-select select2"
                                                                 name="requester">
                                                                 <option value="">Select</option>
@@ -557,7 +557,7 @@
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Subject</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Example</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Test</th>
-                                            <th scope="col" class="text-nowrap text-center " height="" width="100">Requester</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="100">Owner</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Staff Create</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Date Create</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Staff Update</th>
@@ -697,7 +697,7 @@
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Subject</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Example</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Test</th>
-                                            <th scope="col" class="text-nowrap text-center " height="" width="100">Requester</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="100">Owner</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Staff Create</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Date Create</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Staff Update</th>

@@ -117,7 +117,7 @@
                                 <div class="col-sm-4 invoice-col">
                                     <div class="row">
                                         <div class="col-sm">
-                                            <b>Requester :</b> <?php echo $res_search["requester"]; ?><br>
+                                            <b>Owner :</b> <?php echo $res_search["requester"]; ?><br>
                                             <b>Staff :</b> <?php echo $res_search["staff_crt"]; ?><br>
                                             <b>Status:</b>
                                                 <?php
