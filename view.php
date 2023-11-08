@@ -216,7 +216,8 @@
                                             <th scope="col" class="text-nowrap text-center " height="" width="">#</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Status</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Update/Commect</th>
-                                            <th scope="col" class="text-nowrap text-center " height="" width="">Staff</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="">Owner</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="">Operator</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Date/Time</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Action</th>
                                         </tr>
@@ -252,6 +253,7 @@
                                             <td scope="col" class="  " height="" width="">
                                                 <?php echo $res_search["add_task"]; ?> 
                                             </td>
+                                            <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["staff_crt"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["staff_edit"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["date_edit"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width="">
@@ -267,7 +269,8 @@
                                             <th scope="col" class="text-nowrap text-center " height="" width="">#</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Status</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Update/Commect</th>
-                                            <th scope="col" class="text-nowrap text-center " height="" width="">Staff</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="">Owner</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="">Operator</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Date/Time</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Action</th>
                                         </tr>
