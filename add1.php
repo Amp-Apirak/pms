@@ -114,7 +114,7 @@
                         },1000);
                    </script>';
                    
-                   $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
+                   $sToken = "ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu";
 
                     $sMessage = "".$staff_crt." **Open Ticket** \n\n";
                     $sMessage .= "Category: ".$category." \n";

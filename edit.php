@@ -100,8 +100,8 @@
                                         error_reporting(E_ALL);
                                         date_default_timezone_set("Asia/Bangkok");
                             
-                                        $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
-                                        $sMessage = "".$staff_crt." **Open Ticket** \n\n";
+                                        $sToken = "ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu";
+                                        $sMessage = "".$staff_edit." **Update Ticket** \n\n";
 
                                         $sMessage .= "Category: ".$category." \n";
                                         $sMessage .= "Type: ".$work_type." \n";
@@ -129,11 +129,6 @@
                                         curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
                                         $resultt1 = curl_exec( $chOne ); 
 
-                                        $strTo = "apirak.ba@gmail.com";
-                                        $strSubject = "Test Send Email";
-                                        $strHeader = "From: phattraorn.a@pointit.co.th";
-                                        $strMessage = "My Body & My Description";
-                                        $flgSend = @mail($strTo,$strSubject,$strMessage,$strHeader);
 
                                 //     // echo "<script>alert('ยินดีตอนรับ Admin เข้าสู่ระบบ'); window.location='../index.php'</script>";
                                 } else {
