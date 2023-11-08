@@ -37,30 +37,6 @@
         $file_test = $_FILES["file_test"]["name"] ;
 
 
-            $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
-            $sMessage = "LAOS PMS** ".$staff_crt." **Open Ticket** Job Notification\n\n";
-            $sMessage .= "Type: ".$work_type." \n";
-            $sMessage .= "Requeter: ".$requester." \n";
-            $sMessage .= "Status : ".$status."\n";
-            $sMessage .= "Subject : ".$subject."\n\n";
-
-            $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/index.php \n"; 
-
-
-            $sMessage .= "@all";
-         
-
-
-            $chOne = curl_init(); 
-            curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify"); 
-            curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0); 
-            curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0); 
-            curl_setopt( $chOne, CURLOPT_POST, 1); 
-            curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=".$sMessage); 
-            $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer '.$sToken.'', );
-            curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers); 
-            curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
-            $resultt1 = curl_exec( $chOne ); 
 
 
         //printf($target_file1);
@@ -137,6 +113,32 @@
                             })
                         },1000);
                    </script>';
+                   
+                   $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
+                   $sMessage = "LAOS PMS** ".$staff_crt." **Open Ticket** Job Notification\n\n";
+                   $sMessage .= "Type: ".$work_type." \n";
+                   $sMessage .= "Requeter: ".$requester." \n";
+                   $sMessage .= "Status : ".$status."\n";
+                   $sMessage .= "Subject : ".$subject."\n\n";
+       
+                   $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/index.php \n"; 
+       
+       
+                   $sMessage .= "@All";
+                
+       
+       
+                   $chOne = curl_init(); 
+                   curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify"); 
+                   curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0); 
+                   curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0); 
+                   curl_setopt( $chOne, CURLOPT_POST, 1); 
+                   curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=".$sMessage); 
+                   $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer '.$sToken.'', );
+                   curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers); 
+                   curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
+                   $resultt1 = curl_exec( $chOne ); 
+
                 // echo "<script>alert('ยินดีตอนรับ Admin เข้าสู่ระบบ'); window.location='../index.php'</script>";
             } else {
                 // <!-- sweetalert -->

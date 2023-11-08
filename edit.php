@@ -45,51 +45,9 @@
         $add_task = $_POST['add_task'];
         $work_id = $_POST['work_id'];
 
-
-
-
         $file_upfile = $_FILES['file_upfile']['name'];
         $file_test = $_FILES['file_test']['name'];
         
-
-            ini_set('display_errors', 1);
-            ini_set('display_startup_errors', 1);
-            error_reporting(E_ALL);
-            date_default_timezone_set("Asia/Bangkok");
-
-            $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
-            $sMessage = "LAOS PMS ** ".$staff_edit." **Update Ticket**\n\n";
-
-            $sMessage .= "<*>Status : ".$status."<*>\n\n";
-
-            $sMessage .= "Type: ".$work_type." \n";
-            $sMessage .= "Requeter: ".$requester." \n";
-            
-            $sMessage .= "เรื่อง : ".$subject."\n\n";
-
-            $sMessage .= "รายละเอียด : ".$detail."\n";
-            $sMessage .= "------------------------------ \n";
-            $sMessage .= "คำแนะนำ : ".$add_task."\n\n";
-
-            $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/view.php?id=$_GET[id] \n\n";
-
-            $sMessage .= "@All \n";
-
-            
-            $chOne = curl_init(); 
-            curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify"); 
-            curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0); 
-            curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0); 
-            curl_setopt( $chOne, CURLOPT_POST, 1); 
-            curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=".$sMessage); 
-            $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer '.$sToken.'', );
-            curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers); 
-            curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
-            $resultt1 = curl_exec( $chOne ); 
-
-
-
-
 
         if($file_upfile !=''){
             $file_tmp = $_FILES['file_upfile']['tmp_name'];
@@ -136,6 +94,43 @@
                                                 })
                                             },1000);
                                         </script>';
+
+                                        ini_set('display_errors', 1);
+                                        ini_set('display_startup_errors', 1);
+                                        error_reporting(E_ALL);
+                                        date_default_timezone_set("Asia/Bangkok");
+                            
+                                        $sToken = "8CyHEXNouMVT3mgLFBb8sw74DbEwkZ5lN6oabOQ0vk9";
+                                        $sMessage = "LAOS PMS ** ".$staff_edit." **Update Ticket**\n\n";
+                                        $sMessage .= "<*>Status : ".$status."<*>\n\n";
+                                        $sMessage .= "Type: ".$work_type." \n";
+                                        $sMessage .= "Requeter: ".$requester." \n";
+                                        $sMessage .= "เรื่อง : ".$subject."\n\n";
+                                        $sMessage .= "รายละเอียด : ".$detail."\n";
+                                        $sMessage .= "------------------------------ \n";
+                                        $sMessage .= "คำแนะนำ : ".$add_task."\n\n";
+                            
+                                        $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/view.php?id=$_GET[id] \n\n";
+                                        $sMessage .= "@All \n";
+                            
+                                        
+                                        $chOne = curl_init(); 
+                                        curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify"); 
+                                        curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0); 
+                                        curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0); 
+                                        curl_setopt( $chOne, CURLOPT_POST, 1); 
+                                        curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=".$sMessage); 
+                                        $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer '.$sToken.'', );
+                                        curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers); 
+                                        curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
+                                        $resultt1 = curl_exec( $chOne ); 
+
+                                        $strTo = "apirak.ba@gmail.com";
+                                        $strSubject = "Test Send Email";
+                                        $strHeader = "From: phattraorn.a@pointit.co.th";
+                                        $strMessage = "My Body & My Description";
+                                        $flgSend = @mail($strTo,$strSubject,$strMessage,$strHeader);
+
                                 //     // echo "<script>alert('ยินดีตอนรับ Admin เข้าสู่ระบบ'); window.location='../index.php'</script>";
                                 } else {
                                 //     // <!-- sweetalert -->
