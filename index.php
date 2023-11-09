@@ -603,13 +603,8 @@
                                                 ?>
                                             </td>
 
-<<<<<<< HEAD
-                                            <td  scope="col" class="text-overflow" height="" width="50"> 
-                                                    <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" > <?php echo $res_search["subject"]; ?></a> <p>
-=======
-                                            <td  scope="col" class="" id="mylayout_2"> 
+                                            <td  scope="col" class="" id="mylayout_2" > 
                                                     <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" > <?php echo $res_search["subject"]; ?></a>
->>>>>>> 03f484f90eb4c74f5bfcfd38f5b9006c212fccef
 
                                                     <?php
                                                     if($res_search["add_task"] ==''){
