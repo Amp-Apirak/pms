@@ -236,7 +236,7 @@
                                             <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $i++ ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width="">
                                             <?php
-                                                    if($res_search["v_status"] =='Wiating for approve'){
+                                                    if($res_search["v_status"] =='Approve'){
                                                         echo "<span class='badge badge-primary'>{$res_search["v_status"]}</span>";
                                                     }elseif($res_search["v_status"] =='On Process'){
                                                         echo "<span class='badge badge-warning'>{$res_search["v_status"]}</span>";
@@ -407,12 +407,15 @@
                                   ?>
 
                                     <div class="col col-12 mb-4">
-                                                <label>Status<span class="text-danger"> (กรณีแก้ไขแล้วให้เปลี่ยนสถานะ เป็น Complated)</span></label>
+                                                <label>Status <span class="text-danger"><small>(กรณีแก้ไขแล้วให้เปลี่ยนสถานะ เป็น Complated)</small></span></label>
                                                 <select class="form-control select2" name="v_status"
                                                     style="width: 100%;">
                                                     <option selected="selected"><?= $rr->status; ?></option>
+                                                        <option>Approve</option>
                                                         <option>On Process</option>
                                                         <option>Done</option>
+                                                        <option>Pending</option>
+                                                        <option>Cancel</option>
                                                 </select>
                                     </div>
                                             <!-- /.form-group -->
@@ -422,7 +425,7 @@
                                     <div class="col col-12 ">
                                         <!-- textarea -->
                                         <div class="form-group">
-                                                <label>Update/Commect (Add Task)<span class="text-danger">*</span></label>
+                                                <label>Update/Commect (Add Task)<span class="text-danger"> <small>(อัพเดท หรือเขียนโน็ตสำหรับแท็กงานให้เจ้าหน้าที่ท่านอื่นได้ทราบ)*</small></span></label>
                                                 <textarea class="form-control" name="add_task" id="add_task" rows="6" required placeholder="รายละเอียด"></textarea>
                                         </div>
                                     </div>
@@ -438,7 +441,7 @@
                                             $query_service = mysqli_query($conn, $_sql_service);
                                             ?>
 
-                                            <label>Operation Staff <span class="text-danger">*</span></label>
+                                            <label>Operation Staff <span class="text-danger"> <small>(บังคับเลือก*ชื่อผู้บันทึก*)</small></span></label>
                                                 <select class="custom-select select2 " required width="" name="staff_edit">
                                                     <option selected="selected"></option>
                                                         <?php while ($r = mysqli_fetch_array($query_service)) { ?>

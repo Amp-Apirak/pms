@@ -375,16 +375,30 @@
                                             </div>
 
                                             
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Owner<span
-                                                        class="text-danger">*</span></label>
-                                                <input type="text" name="requester" class="form-control" value="<?= $rr->requester; ?>"
-                                                    id="exampleInputEmail1" placeholder="ผู้ร้องขอ" required>
-                                            </div>
-                                            <!-- /.form-group -->
+                                              <!-- ดึงข้อมูล Folder มาจาก folder_doc -->
+                                              <?php
+                                            $contact_name = "";
+                                            $_sql_servicez = "SELECT DISTINCT * FROM contact";
+                                            $query_servicez = mysqli_query($conn, $_sql_servicez);
+                                            ?>
 
                                             <div class="form-group">
-                                                <label for="file_test">Image Test <span class="text-danger"> (แนบไฟล์ภาพผลการดำเนินการ >หากมี<)</span></label>
+                                                        <label>Owner <span class="text-danger"> <small>(ผู้รับผิดชอบ/แก้ไขงาน)*</small></span></label>
+                                                        <select class="custom-select select2 " required width=""
+                                                            name="requester">
+                                                            <option selected="selected"><?= $rr->requester; ?></option>
+                                                            <?php while ($rm = mysqli_fetch_array($query_servicez)) { ?>
+                                                            <option value="<?php echo $rm["contact_name"]; ?>"
+                                                                <?php if ($rm['contact_name'] == $contact_name) : ?>
+                                                                selected="selected" <?php endif; ?>>
+                                                                <?php echo $rm["contact_name"]; ?>
+                                                            </option>
+                                                            <?php } ?>
+                                                        </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="file_test">Image Test <span class="text-danger"> <small>(แนบไฟล์ภาพผลการดำเนินการ >หากมี<)</small></span></label>
                                                 <div class="custom-file">
 
                                                     <input type="file" class="custom-file-input" id="file_test" name="file_test">
@@ -398,16 +412,17 @@
 
                                             <!-- textarea -->
                                             <div class="form-group">
-                                                <label>Update/Commect (Add Task)</label>
+                                                <label>Update/Commect (Add Task) <span class="text-danger"> <small>(อัพเดท หรือเขียนโน็ตสำหรับแท็กงานให้เจ้าหน้าที่ท่านอื่นได้ทราบ)*</small></span></label>
                                                 <textarea class="form-control" name="add_task" id="add_task" rows="6"
                                                     placeholder=""></textarea>
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Status<span class="text-danger"> (กรณีแก้ไขแล้วให้เปลี่ยนสถานะ เป็น Complated)</span></label>
+                                                <label>Status <span class="text-danger"> <small>(กรณีแก้ไขแล้วให้เปลี่ยนสถานะ เป็น Complated)</small></span></label>
                                                 <select class="form-control select2" name="status"
                                                     style="width: 100%;">
                                                     <option selected="selected"><?= $rr->status; ?></option>
+                                                    <option>Approve</option>
                                                     <option>On Process</option>
                                                     <option>Done</option>
                                                     <option>Pending</option>
@@ -425,7 +440,7 @@
                                             $query_service = mysqli_query($conn, $_sql_service);
                                             ?>
                                                     <div class="form-group">
-                                                        <label>Operation Staff <span class="text-danger"> (บังคับเลือกชื่อ)*</span></label>
+                                                        <label>Operation Staff <span class="text-danger"> <small>(บังคับเลือก*ชื่อผู้บันทึก*)</small></span></label>
                                                         <select class="custom-select select2 " required width=""
                                                             name="staff_edit">
                                                             <option selected="selected"></option>

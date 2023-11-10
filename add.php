@@ -73,7 +73,7 @@
                                                 <label>Type<span class="text-danger">*</span></label>
                                                 <select class="form-control select2" required name="work_type"
                                                     style="width: 100%;">
-                                                    <option selected="selected"></option>
+                                                    <option selected="selected">Service</option>
                                                     <option>Incident</option>
                                                     <option>Service</option>
                                                 </select>
@@ -218,9 +218,9 @@
 
 
                                             <div class="form-group">
-                                                <label for="file_upfile">Image Example <span class="text-danger"> (Only
+                                                <label for="file_upfile">Image Example <span class="text-danger"> <small>(Only
                                                         picture
-                                                        and upload-max-filesize 20M*)</span></label>
+                                                        and upload-max-filesize 20M*)</small></span></label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" id="file_upfile"
                                                         name="file_upfile">
@@ -231,9 +231,9 @@
                                             <!-- /.form-group -->
 
                                             <div class="form-group">
-                                                <label for="file_test">Image Test <span class="text-danger"> (Only
+                                                <label for="file_test">Image Test <span class="text-danger"> <small>(Only
                                                         picture
-                                                        and upload-max-filesize 20M*)</span></label>
+                                                        and upload-max-filesize 20M*)</small></span></label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" id="file_test"
                                                         name="file_test">
@@ -262,10 +262,10 @@
                                             <div class="row">
                                                 <div class="col col-5">
                                                     <div class="form-group">
-                                                        <label>Owner <span class="text-danger">*</span></label>
+                                                        <label>Owner <small class="text-danger">(ผู้รับผิดชอบ/แก้ไขงาน)</small><span class="text-danger">*</span></label>
                                                         <select class="custom-select select2 " width=""
                                                             name="requester">
-                                                            <option selected="selected">คุณภัทราอร (ซีน)</option>
+                                                            <option selected="selected"></option>
                                                             <?php while ($r = mysqli_fetch_array($query_service)) { ?>
                                                             <option value="<?php echo $r["contact_name"]; ?>"
                                                                 <?php if ($r['contact_name'] == $contact_name) : ?>
@@ -297,7 +297,7 @@
                                             ?>
                                                 <div class="col col-5">
                                                     <div class="form-group">
-                                                        <label>Operation Staff <span class="text-danger">*</span></label>
+                                                        <label>Operation Staff <small class="text-danger">(ผู้รับบันทึก หรือผู้แจ้งปัญหา/บริการ)</small><span class="text-danger">*</span></label>
                                                         <select class="custom-select select2 " width=""
                                                             name="staff_crt">
                                                             <option selected="selected"></option>

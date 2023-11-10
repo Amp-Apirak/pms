@@ -589,7 +589,7 @@
                                          
                                             <td scope="col" class="text-nowrap text-center " height="" width="100">
                                                 <?php
-                                                    if($res_search["status"] =='Wiating for approve'){
+                                                    if($res_search["status"] =='Approve'){
                                                         echo "<span class='badge badge-primary'>{$res_search["status"]}</span>";
                                                     }elseif($res_search["status"] =='On Process'){
                                                         echo "<span class='badge badge-warning'>{$res_search["status"]}</span>";
