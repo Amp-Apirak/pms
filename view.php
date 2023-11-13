@@ -348,6 +348,7 @@
     <?php
      if (isset($_POST['submit'])) { /* ถ้า POST มีการกด Submit ให้ทำส่วนล่าง */
 
+        $status = $_POST['v_status'];
         $v_status = $_POST['v_status'];
         $add_task = $_POST['add_task'];
         $work_id =  $_GET['id'];
@@ -383,6 +384,10 @@
     
             $sql =  "INSERT INTO `tb_log` (`v_status`,`add_task`,`work_id`,`staff_edit`,`file_test` )  VALUES ('$v_status','$add_task','$work_id','$staff_edit','$file_test')";
             $result = $conn->query($sql);
+
+            
+            $sqll =  "UPDATE `work` SET `status` = '$status' WHERE work_id=" . $_GET['id'];
+            $resultt = $conn->query($sqll);
 
             //print_r($sql);
 
