@@ -52,6 +52,7 @@
         if($file_upfile !=''){
             $file_tmp = $_FILES['file_upfile']['tmp_name'];
             move_uploaded_file($file_tmp, "../pms/example/$file_upfile");
+            
 
         }else {
 
@@ -60,7 +61,7 @@
         }if ($file_test !=''){
             $file_tmp = $_FILES['file_test']['tmp_name'];
             move_uploaded_file($file_tmp, "../pms/test/$file_test");
-        
+
         }else {
 
             
@@ -74,8 +75,8 @@
                             `staff_edit` = '$staff_edit', `service` = '$service', `items` = '$items', `category` = '$category', `file_upfile` = '$file_upfile' WHERE work_id=" . $_GET['id'];
                             $result = $conn->query($sql);
 
-            $sqll =   "INSERT INTO `tb_log` (`work_id`, `add_task`,`staff_edit`,`v_status`)
-                            VALUES ($work_id, '$add_task', '$staff_edit', '$status')";
+            $sqll =   "INSERT INTO `tb_log` (`work_id`, `add_task`,`staff_edit`,`v_status`,`file_test`)
+                            VALUES ($work_id, '$add_task', '$staff_edit', '$status', '$file_test')";
                             $resultt = $conn->query($sqll);
 
                             
@@ -383,7 +384,7 @@
                                             ?>
 
                                             <div class="form-group">
-                                                        <label>Owner <span class="text-danger"> <small>(ผู้รับผิดชอบ/แก้ไขงาน)*</small></span></label>
+                                                        <label>Owner/Assign <span class="text-danger"> <small>(ผู้รับผิดชอบ/แก้ไขงาน)*</small></span></label>
                                                         <select class="custom-select select2 " required width=""
                                                             name="requester">
                                                             <option selected="selected"><?= $rr->requester; ?></option>
@@ -402,9 +403,9 @@
                                                 <div class="custom-file">
 
                                                     <input type="file" class="custom-file-input" id="file_test" name="file_test">
-                                                    <label class="custom-file-label" for="file_test"><?= $rr->file_test; ?></label>
+                                                    <label class="custom-file-label" for="file_test"></label>
 
-                                                    <input type="hidden" class="custom-file-input" id="file_test2"  value="<?= $rr->file_test; ?>" name="file_test2">
+
                                                     <input type="hidden" class="custom-file-input" id="work_id"  value="<?= $rr->work_id; ?>" name="work_id">
                                                 </div>
                                             </div>

@@ -215,6 +215,7 @@
                                         <tr>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">#</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Status</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="">Image</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Update/Commect</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Owner</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Operator</th>
@@ -249,7 +250,19 @@
                                                     }
                                                 ?>
        
-                                        </td>
+                                            </td>
+                                            <td  scope="col" class="text-nowrap text-center" height="" width="100">
+                                                <a href="../pms/test/<?php echo $res_search["file_test"]; ?>" data-lightbox="image-1" data-title="../pms/test/<?php echo $res_search["file_test"]; ?>  (<?php echo $res_search["file_test"]; ?>)" class="img-fluid "   >
+                                                    <?php
+                                                        if($res_search["file_test"] ==''){
+                                                            echo "<span class='badge badge-warning'>No Image</span>";
+                                                        }elseif($res_search["file_test"]){
+                                                            echo '<img class="imgx"  width="85" height="85" src="../pms/test/'.$res_search["file_test"].'"';
+                                                        }
+                                                    ?>
+                                                </a>
+                                                
+                                            </td>
                                             <td scope="col" class="  " height="" width="">
                                                 <?php echo $res_search["add_task"]; ?> 
                                             </td>
@@ -264,6 +277,7 @@
                                         <tr>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">#</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Status</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="">Image</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Update/Commect</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Owner</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Operator</th>
@@ -336,11 +350,38 @@
 
         $v_status = $_POST['v_status'];
         $add_task = $_POST['add_task'];
-        $work_id = $_POST['work_id'];
+        $work_id =  $_GET['id'];
         $staff_edit = $_POST['staff_edit'];
 
+        $target_dir1 = "../pms/test/";
+        $target_file1 = $target_dir1 . basename($_FILES["file_test"]["name"]);
+        $imageFileType1 = strtolower(pathinfo($target_file1, PATHINFO_EXTENSION));
+        $file_test = $_FILES["file_test"]["name"] ;
+
+        if ($imageFileType1 == " " ) {
+
+            //echo "Sorry, your file was not uploaded.";
+            echo '<script>
+                    setTimeout(function(){
+                        swal({
+                            title: "Sorry, your file was not uploaded.",
+                            text: "Please check the file name.",
+                            type:"warning"
+                        }, function(){
+                            window.location = "doc_add.php";
+                        })
+                    },1000);
+                </script>';
+
+        } else {
+
+            $file_upfile1 = $_FILES['file_test']['name'];
+            $file_tmp1 = $_FILES['file_test']['tmp_name'];
+            move_uploaded_file($file_tmp1, "../pms/test/$file_upfile1");
+
+
     
-            $sql =  "INSERT INTO `tb_log` (`v_status`,`add_task`,`work_id`,`staff_edit` )  VALUES ('$v_status','$add_task','$work_id','$staff_edit')";
+            $sql =  "INSERT INTO `tb_log` (`v_status`,`add_task`,`work_id`,`staff_edit`,`file_test` )  VALUES ('$v_status','$add_task','$work_id','$staff_edit','$file_test')";
             $result = $conn->query($sql);
 
             //print_r($sql);
@@ -375,6 +416,7 @@
             //     echo "<script>alert('ยินดีตอนรับ Admin เข้าสู่ระบบ'); window.location='../index.php'</script>";
             }
     }
+}
         
     ?>
 
@@ -416,6 +458,19 @@
                                     </div>
                                             <!-- /.form-group -->
                                             
+                                </div>
+                                <div class="row">
+                                    <div class="col col-12 ">
+                                        <div class="form-group">
+                                                <label for="file_test">Image Test <span class="text-danger"> <small>(Only
+                                                        picture
+                                                        and upload-max-filesize 20M*)</small></span></label>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="file_test" name="file_test"> <label class="custom-file-label" for="file_test">Choose file</label>
+                                                </div>
+                                            </div>
+                                            <!-- /.form-group -->
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col col-12 ">
