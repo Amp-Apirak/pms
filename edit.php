@@ -36,7 +36,6 @@
         $requester = $_POST['requester'];
         $staff_edit = $_POST['staff_edit'];
         $file_upfile2 = $_POST['file_upfile2'];
-        $file_test2 = $_POST['file_test2'];
         $service = $_POST['service_name'];
         $items = $_POST['items_name'];
         $category = $_POST['category_name'];
