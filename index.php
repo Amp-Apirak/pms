@@ -606,7 +606,7 @@
                                             </td>
 
                                             <td  scope="col" class="" id="mylayout_2" > 
-                                                    <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" > <?php echo $res_search["subject"]; ?></a>
+                                                    <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" target="_blank"  > <?php echo $res_search["subject"]; ?></a>
 
                                                     <?php
                                                     if($res_search["add_task"] ==''){
