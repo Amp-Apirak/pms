@@ -63,7 +63,7 @@
 
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Project Name</label>
-                                                <input type="text" name="project_name" class="form-control" id="exampleInputEmail1" placeholder="โครกการ" value="Kudson Moo Platform" >
+                                                <input type="text" name="project_name" class="form-control" id="exampleInputEmail1" placeholder="โครกการ" value="PMS (Phase 1)" >
                                                 <input type="Hidden" name="date_crt" class="form-control"  value="<?php echo $date; ?>" >
                                             </div>
                                             <!-- /.form-group -->
