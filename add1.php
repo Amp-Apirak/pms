@@ -117,15 +117,15 @@
                    </script>';
 
                    $sToken = "ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu"; //ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu
-                   $sMessage = "".$staff_crt." **Open Ticket** \n\n";
+                   $sMessage = "👉".$staff_crt." **Open Ticket** \n\n";
 
                    $sMessage .= "Category: ".$category." \n";
                    $sMessage .= "Type: ".$work_type." \n";
                    $sMessage .= "Items: ".$items." \n";
                    $sMessage .= "-------------------------- \n";
-                   $sMessage .= "Status : ".$status."\n";
+                   $sMessage .= "📌Status : ".$status."📌\n";
                    $sMessage .= "-------------------------- \n";
-                   $sMessage .= "Owner: ".$requester." \n";
+                   $sMessage .= "👉Owner: ".$requester." \n";
                    $sMessage .= "Subject : ".$subject."\n\n";
 
                    
