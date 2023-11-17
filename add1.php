@@ -126,7 +126,7 @@
                    $sMessage .= "📌Status : ".$status."📌\n";
                    $sMessage .= "-------------------------- \n";
                    $sMessage .= "👉Owner: ".$requester." \n";
-                   $sMessage .= "Subject : ".$subject."\n\n";
+                   $sMessage .= "📢Subject : ".$subject."\n\n";
 
                    
        
