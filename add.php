@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Uplevel | Add Task</title>
+    <title>Innovation Test Bug | Add Task</title>
 
 
     <!----------------------------- start header ------------------------------->
@@ -19,8 +19,7 @@
     <!----------------------------- start Time ------------------------------->
     <?php
     date_default_timezone_set('asia/bangkok');
-    $date = date('d/m/Y');
-    $time = date("H:i:s", "1359780799");
+    $date = date("Y-m-d H:i:s");
     ?>
     <!----------------------------- start Time ------------------------------->
 
@@ -64,16 +63,16 @@
 
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Project Name</label>
-                                                <input type="text" name="project_name" class="form-control" value="PMS (Phase 1)"
-                                                    id="exampleInputEmail1" placeholder="โครกการ" >
+                                                <input type="text" name="project_name" class="form-control" id="exampleInputEmail1" placeholder="โครกการ" value="Kudson Moo Platform" >
+                                                <input type="Hidden" name="date_crt" class="form-control"  value="<?php echo $date; ?>" >
                                             </div>
                                             <!-- /.form-group -->
 
                                             <div class="form-group">
                                                 <label>Type<span class="text-danger">*</span></label>
-                                                <select class="form-control select2" required name="work_type"
+                                                <select class="form-control select2" name="work_type"
                                                     style="width: 100%;">
-                                                    <option selected="selected">Service</option>
+                                                    <option selected="selected">Incident</option>
                                                     <option>Incident</option>
                                                     <option>Service</option>
                                                 </select>
@@ -198,7 +197,7 @@
                                             <div class="form-group">
                                                 <label>Status<span class="text-danger">*</span></label>
                                                 <select class="form-control select2" name="status" style="width: 100%;">
-                                                    <option selected="selected"></option>
+                                                    <option selected="selected">On Process</option>
                                                     <option>On Process</option>
                                                     <option>Done</option>
                                                     <option>Pending</option>
@@ -212,7 +211,7 @@
                                                 <label for="exampleInputEmail1">Subject<span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" name="subject" class="form-control"
-                                                    id="exampleInputEmail1" placeholder="แจ้งปัญหา .... ,ขอบริการ แก้ไข.... ,ขอบริการ ลบ.... ,ขอบริการ เพิ่มเติม...." required>
+                                                    id="exampleInputEmail1" placeholder="" required>
                                             </div>
                                             <!-- /.form-group -->
 
@@ -265,7 +264,7 @@
                                                         <label>Owner <small class="text-danger">(ผู้รับผิดชอบ/แก้ไขงาน)</small><span class="text-danger">*</span></label>
                                                         <select class="custom-select select2 " width=""
                                                             name="requester">
-                                                            <option selected="selected"></option>
+                                                            <option selected="selected">คุณสุรพันธ์ (พี่ขวัญ)</option>
                                                             <?php while ($r = mysqli_fetch_array($query_service)) { ?>
                                                             <option value="<?php echo $r["contact_name"]; ?>"
                                                                 <?php if ($r['contact_name'] == $contact_name) : ?>
@@ -297,10 +296,10 @@
                                             ?>
                                                 <div class="col col-5">
                                                     <div class="form-group">
-                                                        <label>Operation Staff <small class="text-danger">(ผู้รับบันทึก หรือผู้แจ้งปัญหา/บริการ)</small><span class="text-danger">*</span></label>
+                                                        <label>Operation Staff <small class="text-danger">(ผู้รับบันทึก หรือผู้แจ้งปัญหา/บริการ)</small> <span class="text-danger">*</span></label>
                                                         <select class="custom-select select2 " width=""
                                                             name="staff_crt">
-                                                            <option selected="selected"></option>
+                                                            <option selected="selected">คุณอภิรักษ์ (แอมป์)</option>
                                                             <?php while ($r = mysqli_fetch_array($query_service)) { ?>
                                                             <option value="<?php echo $r["contact_name"]; ?>"
                                                                 <?php if ($r['contact_name'] == $contact_name) : ?>

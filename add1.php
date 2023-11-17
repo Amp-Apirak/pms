@@ -24,6 +24,7 @@
         $requester = $_POST['requester'];
         $staff_crt = $_POST['staff_crt'];
         $project_name = $_POST['project_name'];
+        $date_crt = $_POST['date_crt'];
 
 
 
@@ -88,10 +89,10 @@
 
 
 
-            $sql = "INSERT INTO `work` (`work_id`, `work_type`,`service`, `category`,
+            $sql = "INSERT INTO `work` (`work_id`, `work_type`,`service`, `category`, `date_crt`,
             `items`, `file_upfile`,  `subject`, `status`,`detail`,`requester`,`staff_crt`,
             `file_test`,`project_name`)
-            VALUES (NULL, '$work_type', '$service', '$category', '$items', '$file_upfile',
+            VALUES (NULL, '$work_type', '$service', '$category', '$date_crt', '$items', '$file_upfile',
              '$subject', '$status', '$detail', '$requester', '$staff_crt','$file_test','$project_name')";
 
 
@@ -113,24 +114,22 @@
                             })
                         },1000);
                    </script>';
-                   
-                   $sToken = "ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu";
 
-                    $sMessage = "".$staff_crt." **Open Ticket** \n\n";
-                    $sMessage .= "Category: ".$category." \n";
-                    $sMessage .= "Type: ".$work_type." \n";
-                    $sMessage .= "Items: ".$items." \n\n";
-                    $sMessage .= "-------------------------- \n";
-                    $sMessage .= "Status : ".$status."\n";
-                    $sMessage .= "-------------------------- \n";
-                    $sMessage .= "Owner: ".$requester." \n";
-                    $sMessage .= "Subject : ".$subject."\n\n";
+                   $sToken = "naVu5WjTmpUczYuJ1860zoKYUU9vbIR6DFvBWlGzavf"; //naVu5WjTmpUczYuJ1860zoKYUU9vbIR6DFvBWlGzavf
+                   $sMessage = "".$staff_crt." **Open Ticket** \n\n";
+
+                   $sMessage .= "Category: ".$category." \n";
+                   $sMessage .= "Type: ".$work_type." \n";
+                   $sMessage .= "Items: ".$items." \n";
+                   $sMessage .= "-------------------------- \n";
+                   $sMessage .= "Status : ".$status."\n";
+                   $sMessage .= "-------------------------- \n";
+                   $sMessage .= "Owner: ".$requester." \n";
+                   $sMessage .= "Subject : ".$subject."\n\n";
+
+                   
        
-                   $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/index.php \n"; 
-       
-       
-                   $sMessage .= "@All";
-                
+                   $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/up/index.php \n";
        
        
                    $chOne = curl_init(); 
@@ -143,7 +142,7 @@
                    curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers); 
                    curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
                    $resultt1 = curl_exec( $chOne ); 
-
+       
                 // echo "<script>alert('ยินดีตอนรับ Admin เข้าสู่ระบบ'); window.location='../index.php'</script>";
             } else {
                 // <!-- sweetalert -->

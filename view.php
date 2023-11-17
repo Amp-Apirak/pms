@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Innovation | Log description</title>
+    <title>Innovation Test Bug | Log description</title>
 
 
     <!----------------------------- start header ------------------------------->
@@ -15,6 +15,13 @@
     <!----------------------------- start menu ------------------------------->
     <?php include("../pms/templated/menu.php"); ?>
     <!----------------------------- end menu --------------------------------->
+
+      <!----------------------------- start Time ------------------------------->
+    <?php
+    date_default_timezone_set('asia/bangkok');
+    $date = date("Y-m-d H:i:s");
+    ?>
+    <!----------------------------- start Time ------------------------------->
 
 
     <?php
@@ -117,7 +124,7 @@
                                 <div class="col-sm-4 invoice-col">
                                     <div class="row">
                                         <div class="col-sm">
-                                            <b>Owner :</b> <?php echo $res_search["requester"]; ?><br>
+                                            <b>Requester :</b> <?php echo $res_search["requester"]; ?><br>
                                             <b>Staff :</b> <?php echo $res_search["staff_crt"]; ?><br>
                                             <b>Status:</b>
                                                 <?php
@@ -211,7 +218,7 @@
                             <div class="card-body">
                                 <table id="example1" class="table table-bordered table-striped">
 
-                                    <thead>
+                                <thead>
                                         <tr>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">#</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="">Status</th>
@@ -353,6 +360,7 @@
         $add_task = $_POST['add_task'];
         $work_id =  $_GET['id'];
         $staff_edit = $_POST['staff_edit'];
+        $date_edit = $_POST['date_edit'];
 
         $target_dir1 = "../pms/test/";
         $target_file1 = $target_dir1 . basename($_FILES["file_test"]["name"]);
@@ -382,11 +390,11 @@
 
 
     
-            $sql =  "INSERT INTO `tb_log` (`v_status`,`add_task`,`work_id`,`staff_edit`,`file_test` )  VALUES ('$v_status','$add_task','$work_id','$staff_edit','$file_test')";
+            $sql =  "INSERT INTO `tb_log` (`v_status`,`add_task`,`work_id`,`staff_edit`,`file_test`,`date_edit` )  VALUES ('$v_status','$add_task','$work_id','$staff_edit','$file_test','$date_edit')";
             $result = $conn->query($sql);
 
             
-            $sqll =  "UPDATE `work` SET `status` = '$status' WHERE work_id=" . $_GET['id'];
+            $sqll =  "UPDATE `work` SET `status` = '$status',`staff_edit` = '$staff_edit', `date_edit` = '$date_edit', `add_task` = '$add_task' WHERE work_id=" . $_GET['id'];
             $resultt = $conn->query($sqll);
 
             //print_r($sql);
@@ -404,8 +412,42 @@
                             })
                         },1000);
                     </script>';
-                // echo "<script>alert('ยินดีตอนรับ Admin เข้าสู่ระบบ'); window.location='../index.php'</script>";
-            } else {
+
+                                        ini_set('display_errors', 1);
+                                        ini_set('display_startup_errors', 1);
+                                        error_reporting(E_ALL);
+                                        date_default_timezone_set("Asia/Bangkok");
+                            
+                                        $sToken = "naVu5WjTmpUczYuJ1860zoKYUU9vbIR6DFvBWlGzavf"; //naVu5WjTmpUczYuJ1860zoKYUU9vbIR6DFvBWlGzavf
+                                        $sMessage = "".$staff_edit." **Update Ticket** \n\n";
+
+                                        $sMessage .= "Category: ".$category." \n";
+                                        $sMessage .= "Type: ".$work_type." \n";
+                                        $sMessage .= "Items: ".$items." \n\n";
+                                        $sMessage .= "-------------------------- \n";
+                                        $sMessage .= "Status : ".$status."\n";
+                                        $sMessage .= "-------------------------- \n";
+                                        $sMessage .= "Owner: ".$requester." \n";
+                                        $sMessage .= "Subject : ".$subject."\n\n";
+                                        $sMessage .= "-------------------------- \n";
+                                        $sMessage .= "คำแนะ/แก้ไข : ".$add_task."\n\n";
+
+                                        $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/up/view.php?id=$_GET[id] \n\n";
+                                        $sMessage .= "@All \n";
+                            
+                                        
+                                        $chOne = curl_init(); 
+                                        curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify"); 
+                                        curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0); 
+                                        curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0); 
+                                        curl_setopt( $chOne, CURLOPT_POST, 1); 
+                                        curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=".$sMessage); 
+                                        $headers = array( 'Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer '.$sToken.'', );
+                                        curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers); 
+                                        curl_setopt( $chOne, CURLOPT_RETURNTRANSFER, 1); 
+                                        $resultt1 = curl_exec( $chOne ); 
+                
+                     } else {
                 // <!-- sweetalert -->
                 echo '<script>
                         setTimeout(function(){
@@ -420,8 +462,8 @@
                     </script>';
             //     echo "<script>alert('ยินดีตอนรับ Admin เข้าสู่ระบบ'); window.location='../index.php'</script>";
             }
+        }
     }
-}
         
     ?>
 
@@ -483,6 +525,7 @@
                                         <div class="form-group">
                                                 <label>Update/Commect (Add Task)<span class="text-danger"> <small>(อัพเดท หรือเขียนโน็ตสำหรับแท็กงานให้เจ้าหน้าที่ท่านอื่นได้ทราบ)*</small></span></label>
                                                 <textarea class="form-control" name="add_task" id="add_task" rows="6" required placeholder="รายละเอียด"></textarea>
+                                                <input type="Hidden" name="date_edit" class="form-control" value="<?php echo $date; ?>"  >
                                         </div>
                                     </div>
                                 </div>

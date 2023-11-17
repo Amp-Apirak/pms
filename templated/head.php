@@ -12,13 +12,12 @@
     </style>
 <!-- highlight -->
 
-<!----------------------------- start Time ------------------------------->
+    <!----------------------------- start Time ------------------------------->
     <?php
-        date_default_timezone_set('asia/bangkok');
-        $date = date('Y/m/d');
-        $time = date("H:i:s", "1359780799");
+    date_default_timezone_set('asia/bangkok');
+    $date = date("Y-m-d H:i:s");
     ?>
-<!----------------------------- start Time ------------------------------->
+    <!----------------------------- start Time ------------------------------->
 
 
     <style type="text/css">
@@ -84,8 +83,10 @@
 <!-- SimpleMDE -->
   <link rel="stylesheet" href="../pms/code/plugins/simplemde/simplemde.min.css">
   
-  <style type="text/css">
-td#mylayout_1{
+
+<!-- ความกว้างของตารางแสดงผล -->
+<style type="text/css">
+.mylayout_1{
     display:block;
     width:100px;
     word-wrap:break-word;
@@ -93,6 +94,11 @@ td#mylayout_1{
 td#mylayout_2{
     display:block;
     width:600px;
+    word-wrap:break-word;
+}
+td#mylayout_3{
+    display:block;
+    width:120px;
     word-wrap:break-word;
 }
 </style>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Innovation | Update Task</title>
+    <title>Innovation Test Bug | Update Task</title>
 
 
     <!----------------------------- start header ------------------------------->
@@ -16,12 +16,12 @@
     <?php include("../pms/templated/menu.php"); ?>
     <!----------------------------- end menu --------------------------------->
 
-    <!----------------------------- start Time ------------------------------->
+  <!----------------------------- start Time ------------------------------->
     <?php
     date_default_timezone_set('asia/bangkok');
-    $date = date('d/m/Y');
-    $time = date("H:i:s", "1359780799");
+    $date = date("Y-m-d H:i:s");
     ?>
+    <!----------------------------- start Time ------------------------------->
 
 
 
@@ -40,6 +40,7 @@
         $items = $_POST['items_name'];
         $category = $_POST['category_name'];
         $project_name = $_POST['project_name'];
+        $date_edit = $_POST['date_edit'];
 
         $add_task = $_POST['add_task'];
         $work_id = $_POST['work_id'];
@@ -69,13 +70,13 @@
 
 
 
-            $sql =  "UPDATE `work` SET `work_type` = '$work_type', `subject` = '$subject', `status` = '$status', `file_test` = '$file_test',  `add_task` = '$add_task',
+            $sql =  "UPDATE `work` SET `work_type` = '$work_type', `subject` = '$subject', `status` = '$status', `file_test` = '$file_test',  `add_task` = '$add_task', `date_edit` = '$date_edit',
                             `detail` = '$detail', `requester` = '$requester',`project_name` = '$project_name', 
                             `staff_edit` = '$staff_edit', `service` = '$service', `items` = '$items', `category` = '$category', `file_upfile` = '$file_upfile' WHERE work_id=" . $_GET['id'];
                             $result = $conn->query($sql);
 
-            $sqll =   "INSERT INTO `tb_log` (`work_id`, `add_task`,`staff_edit`,`v_status`,`file_test`)
-                            VALUES ($work_id, '$add_task', '$staff_edit', '$status', '$file_test')";
+            $sqll =   "INSERT INTO `tb_log` (`work_id`, `add_task`,`staff_edit`,`v_status`,`file_test`,`date_edit`)
+                            VALUES ($work_id, '$add_task', '$staff_edit', '$status', '$file_test', '$date_edit')";
                             $resultt = $conn->query($sqll);
 
                             
@@ -100,7 +101,7 @@
                                         error_reporting(E_ALL);
                                         date_default_timezone_set("Asia/Bangkok");
                             
-                                        $sToken = "ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu";
+                                        $sToken = "naVu5WjTmpUczYuJ1860zoKYUU9vbIR6DFvBWlGzavf"; //naVu5WjTmpUczYuJ1860zoKYUU9vbIR6DFvBWlGzavf
                                         $sMessage = "".$staff_edit." **Update Ticket** \n\n";
 
                                         $sMessage .= "Category: ".$category." \n";
@@ -114,7 +115,7 @@
                                         $sMessage .= "-------------------------- \n";
                                         $sMessage .= "คำแนะ/แก้ไข : ".$add_task."\n\n";
 
-                                        $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/view.php?id=$_GET[id] \n\n";
+                                        $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/up/view.php?id=$_GET[id] \n\n";
                                         $sMessage .= "@All \n";
                             
                                         
@@ -201,8 +202,8 @@
 
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Project Name</label>
-                                                <input type="text" name="project_name" class="form-control" value="<?= $r->project_name; ?>"
-                                                    id="exampleInputEmail1" placeholder="โครกการ" >
+                                                <input type="text" name="project_name" class="form-control" value="<?= $r->project_name; ?>" id="exampleInputEmail1" placeholder="โครกการ" >
+                                                <input type="Hidden" name="date_edit" class="form-control" value="<?php echo $date; ?>"  >
                                             </div>
                                             <!-- /.form-group -->
 

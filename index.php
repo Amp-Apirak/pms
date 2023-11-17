@@ -289,9 +289,9 @@
                                     </div>
                                     <!-- ./col -->
 
-                                    <!-- ------------------------------------------------------------------------------------------------------------------ -->
+                                        <!-- ------------------------------------------------------------------------------------------------------------------ -->
 
-                                    <div class="col-lg-3 col-6">
+                                        <div class="col-lg-3 col-6">
                                         <!-- small box -->
                                         <div class="small-box bg-denger">
 
@@ -583,9 +583,9 @@
                                                     }
                                                 ?>
                                         </td>
-                                        <td scope="col" class=" text-center " height="" width="100"><?php echo $res_search["service"]; ?></td>
-                                        <td scope="col" class=" text-center " height="" width="100"><?php echo $res_search["category"]; ?></td>
-                                        <td scope="col" class=" text-center " height="" width="100"><?php echo $res_search["items"]; ?></td>
+                                        <td scope="col" class="text-nowrap  text-center" ><?php echo $res_search["service"]; ?></td>
+                                        <td scope="col" class="text-nowrap  text-center "  ><?php echo $res_search["category"]; ?></td>
+                                        <td scope="col" class="text-nowrap  text-center"  ><?php echo $res_search["items"]; ?></td>
                                          
                                             <td scope="col" class="text-nowrap text-center " height="" width="100">
                                                 <?php
@@ -600,7 +600,7 @@
                                                     }elseif($res_search["status"] =='Cancel'){
                                                         echo "<span class='badge badge-danger'>{$res_search["status"]}</span>";
                                                     }
-                                                ?>
+                                                    ?>
                                             </td>
 
                                             <td  scope="col" class="" id="mylayout_2" > 
@@ -629,8 +629,8 @@
                                                                     echo '<img class="imgx"  width="60" height="45" src="../pms/example/'.$res_search["file_upfile"].'"';
                                                                 }
                                                             ?>
-                                                    </a>
-                                            
+                                                </a>
+
                                             </td> 
                                             
                                         
@@ -654,7 +654,16 @@
                                             <td scope="col" class="text-nowrap text-center " height="" width="100"><?php echo $res_search["staff_crt"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width="100"><?php echo $res_search["date_crt"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width="100"><?php echo $res_search["staff_edit"]; ?></td>
-                                            <td scope="col" class="text-nowrap text-center " height="" width="100"><?php echo $res_search["date_edit"]; ?></td>
+                                            <td scope="col" class="text-nowrap text-center " height="" width="100">
+                                                    <?php
+                                                        if($res_search["date_edit"] ==''){
+                                                            echo "<span class='badge badge-warning'>No Update</span>";
+                                                        }elseif($res_search["date_edit"]){
+                                                            echo "{$res_search["date_edit"]}";
+                                                        }
+                                                    ?>
+                                        
+                                            </td>
                                             <td scope="col" class="text-nowrap text-center " height="" width="18000" >
                                                 <p>
                                                     <?php $lam = explode(PHP_EOL, $res_search["detail"]);
@@ -667,12 +676,12 @@
                                             <td scope="col" class="text-nowrap text-center " height="" width="100"><?php echo $res_search["project_name"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width="100">
 
-                                                <a href="http://58.137.58.163/pms/example/<?php echo $res_search["file_upfile"]; ?>">
-                                                    http://58.137.58.163/pms/<?php echo $res_search["file_upfile"]; ?> 
+                                                <a href="http://58.137.58.163/up/example/<?php echo $res_search["file_upfile"]; ?>">
+                                                    http://58.137.58.163/up/example/<?php echo $res_search["file_upfile"]; ?> 
                                                 </a> 
                                                     |
-                                                <a href="http://58.137.58.163/pms/test/<?php echo $res_search["file_test"]; ?>">
-                                                    http://58.137.58.163/pms/<?php echo $res_search["file_test"]; ?>
+                                                <a href="http://58.137.58.163/up/test/<?php echo $res_search["file_test"]; ?>">
+                                                    http://58.137.58.163/up/test/<?php echo $res_search["file_test"]; ?>
                                                 </a>
                                         
                                             </td>
@@ -804,7 +813,7 @@
                                     <option>Service bank</option>
                                 </select>
 
-                                <input type="hidden" name="user_crt" value="<?php echo $date; ?> <?php echo $time; ?>" class="form-control datetimepicker-input" data-target="#reservationdate" />
+                                <input type="hidden" name="user_crt" value="<?php echo $date; ?> " class="form-control datetimepicker-input" data-target="#reservationdate" />
                                 <input type="hidden" name="user_staff" class="form-control" value="<?php echo ($_SESSION['fullname']);?>" placeholder="">
 
                             </div>
