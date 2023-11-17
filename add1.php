@@ -25,6 +25,7 @@
         $staff_crt = $_POST['staff_crt'];
         $project_name = $_POST['project_name'];
         $date_crt = $_POST['date_crt'];
+        $work_id = $_POST['work_id'];
 
 
 
