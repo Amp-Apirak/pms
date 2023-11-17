@@ -87,6 +87,7 @@
                     <div class="col-12">
                         <!-- Start ค้นหาและ ดึงข้อมูล -->
                         <?php
+                                    
                                     $search = "";
                                     $status = "";
                                     $requester = "";
@@ -565,6 +566,7 @@
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Detail</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Project Name</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Link Image</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="100">Ticket ID</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Action</th>
                                         </tr>
                                     </thead>
@@ -685,7 +687,7 @@
                                                 </a>
                                         
                                             </td>
-
+                                            <td scope="col" class="text-nowrap text-center " height="" width="100"><?php echo $res_search["work_id"]; ?></td>
                                             <td>
                                                 <!-- <a href="copy.php?id=<?php echo $res_search["work_id"]; ?>" class="btn btn-success btn-sm "><i class="fas fa-copy"></i></a> -->
                                                 <a href="edit.php?id=<?php echo $res_search["work_id"]; ?>" class="btn btn-info btn-sm " ><i class="fas fa-pencil-alt"></i></a>
@@ -714,6 +716,7 @@
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Detail</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Project Name</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Link Image</th>
+                                            <th scope="col" class="text-nowrap text-center " height="" width="100">Ticket ID</th>
                                             <th scope="col" class="text-nowrap text-center " height="" width="100">Action</th>
                                 </table>
                             </div>
