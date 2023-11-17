@@ -25,7 +25,7 @@
         $staff_crt = $_POST['staff_crt'];
         $project_name = $_POST['project_name'];
         $date_crt = $_POST['date_crt'];
-        $work_id = $_POST['work_id'];
+
 
 
 
@@ -117,21 +117,21 @@
                    </script>';
 
                    $sToken = "ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu"; //ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu
-                   $sMessage = "👉".$staff_crt." **Open Ticket** \n\n";
+                   $sMessage = "👉 ".$staff_crt." **Open Ticket** \n\n";
 
                    $sMessage .= "Category: ".$category." \n";
                    $sMessage .= "Type: ".$work_type." \n";
                    $sMessage .= "Items: ".$items." \n";
                    $sMessage .= "-------------------------- \n";
-                   $sMessage .= "📌Status : ".$status."📌\n";
+                   $sMessage .= "📌 Status : ".$status." 📌\n";
                    $sMessage .= "-------------------------- \n";
-                   $sMessage .= "👉Owner: ".$requester." \n";
-                   $sMessage .= "📢Subject : ".$subject."\n\n";
+                   $sMessage .= "👉 Owner: ".$requester." \n";
+                   $sMessage .= "📢 Subject : ".$subject."\n\n";
 
                    
        
                 //    $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/up/index.php \n";
-                   $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/up/view.php?id=$_GET[id] \n\n";
+                   $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/up/index.php \n\n";
        
        
                    $chOne = curl_init(); 

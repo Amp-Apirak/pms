@@ -102,18 +102,18 @@
                                         date_default_timezone_set("Asia/Bangkok");
                             
                                         $sToken = "ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu"; //ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu
-                                        $sMessage = "".$staff_edit." **Update Ticket** \n\n";
+                                        $sMessage = "👉 ".$staff_edit." **Update Ticket** \n\n";
 
                                         $sMessage .= "Category: ".$category." \n";
                                         $sMessage .= "Type: ".$work_type." \n";
                                         $sMessage .= "Items: ".$items." \n\n";
                                         $sMessage .= "-------------------------- \n";
-                                        $sMessage .= "Status : ".$status."\n";
+                                        $sMessage .= "📌 Status : ".$status." 📌\n";
                                         $sMessage .= "-------------------------- \n";
-                                        $sMessage .= "Owner: ".$requester." \n";
-                                        $sMessage .= "Subject : ".$subject."\n\n";
+                                        $sMessage .= "👉 Owner: ".$requester." \n";
+                                        $sMessage .= "📢 Subject : ".$subject."\n\n";
                                         $sMessage .= "-------------------------- \n";
-                                        $sMessage .= "คำแนะ/แก้ไข : ".$add_task."\n\n";
+                                        $sMessage .= "✅ คำแนะ/แก้ไข : ".$add_task."\n\n";
 
                                         $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/up/view.php?id=$_GET[id] \n\n";
                                         $sMessage .= "@All \n";
