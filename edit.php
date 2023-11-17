@@ -62,10 +62,6 @@
             $file_tmp = $_FILES['file_test']['tmp_name'];
             move_uploaded_file($file_tmp, "../pms/test/$file_test");
 
-        }else {
-
-            
-            $file_test = $file_test2;
         }
 
 
