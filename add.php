@@ -264,7 +264,7 @@
                                                         <label>Owner <small class="text-danger">(ผู้รับผิดชอบ/แก้ไขงาน)</small><span class="text-danger">*</span></label>
                                                         <select class="custom-select select2 " width=""
                                                             name="requester">
-                                                            <option selected="selected">คุณสุรพันธ์ (พี่ขวัญ)</option>
+                                                            <option selected="selected"></option>
                                                             <?php while ($r = mysqli_fetch_array($query_service)) { ?>
                                                             <option value="<?php echo $r["contact_name"]; ?>"
                                                                 <?php if ($r['contact_name'] == $contact_name) : ?>
@@ -299,7 +299,7 @@
                                                         <label>Operation Staff <small class="text-danger">(ผู้รับบันทึก หรือผู้แจ้งปัญหา/บริการ)</small> <span class="text-danger">*</span></label>
                                                         <select class="custom-select select2 " width=""
                                                             name="staff_crt">
-                                                            <option selected="selected">คุณอภิรักษ์ (แอมป์)</option>
+                                                            <option selected="selected"><?php echo ($_SESSION['contact_name']);?></option>
                                                             <?php while ($r = mysqli_fetch_array($query_service)) { ?>
                                                             <option value="<?php echo $r["contact_name"]; ?>"
                                                                 <?php if ($r['contact_name'] == $contact_name) : ?>

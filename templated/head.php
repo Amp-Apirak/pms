@@ -1,3 +1,10 @@
+<?php 
+    session_start(); 
+    if(!isset($_SESSION["contact_id"])){
+        Header("Location: login.php");
+    }else{?>
+
+
 <!-- Start Configrate  -->
     <?php
         include("connection/connection.php"); 
@@ -192,7 +199,7 @@ td#mylayout_3{
             
         </nav>
         <!-- /.navbar -->
-
+        <?php } ?>
 
  
 

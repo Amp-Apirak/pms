@@ -440,7 +440,7 @@
                                                         <label>Operation Staff <span class="text-danger"> <small>(บังคับเลือก*ชื่อผู้บันทึก*)</small></span></label>
                                                         <select class="custom-select select2 " required width=""
                                                             name="staff_edit">
-                                                            <option selected="selected"></option>
+                                                            <option selected="<?php echo ($_SESSION['contact_name']);?>"><?php echo ($_SESSION['contact_name']);?></option>
                                                             <?php while ($r = mysqli_fetch_array($query_service)) { ?>
                                                             <option value="<?php echo $r["contact_name"]; ?>"
                                                                 <?php if ($r['contact_name'] == $contact_name) : ?>

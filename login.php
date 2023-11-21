@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project CRA | Log in </title>
+  <title>Innovation Test Bug | Log in </title>
 
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -36,7 +36,7 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="login.php" class="h1"><b>Uplevel </b>Management</a>
+      <a href="login.php" class="h1"><b>Innovation </b>Test Bug</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>
@@ -44,22 +44,36 @@
       <form action="../pms/templated/cklogin.php" method="post">
 
 
+        <!-- Start Configrate  -->
+      <?php
+          include("connection/connection.php"); 
+      ?>
+      
+      <!-- ดึงข้อมูล Folder มาจาก folder_doc -->
+      <?php
+          $contact_name = "";
+          $_sql_service = "SELECT DISTINCT * FROM contact";
+          $query_service = mysqli_query($conn, $_sql_service);
+      ?>
+
+
         
       <div class="form-group">
-            <select class="form-control select2 select2-Primary" placeholder="Default input"  data-dropdown-css-class="select2-primary" style="width: 100%;">
+            <select class="form-control select2 select2-Primary" placeholder="Default input" name="username" data-dropdown-css-class="select2-primary" style="width: 100%;">
                 <option selected="selected">Select Name</option>
-                <option></option>
-                <option>California</option>
-                <option>Delaware</option>
-                <option>Tennessee</option>
-                <option>Texas</option>
-                <option>Washington</option>
+                  <?php while ($r = mysqli_fetch_array($query_service)) { ?>
+                    <option value="<?php echo $r["username"]; ?>"
+                      <?php if ($r['contact_name'] == $contact_name) : ?>
+                        selected="selected" <?php endif; ?>>
+                      <?php echo $r["contact_name"]; ?>
+                    </option>
+                    <?php } ?>
             </select>
         </div>
                 <!-- /.form-group -->
               
         <div class="form-group">
-            <input class="form-control" type="Password" placeholder="Default input">
+            <input class="form-control" type="Password" name="password" value="12345678">
         </div>
 
 
