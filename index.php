@@ -606,7 +606,7 @@
                                             </td>
 
                                             <td  scope="col" class="" id="mylayout_2" > 
-                                                    <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" target="_blank"  > <?php echo $res_search["subject"]; ?> <span class='badge badge-danger'> Owner : <?php echo $res_search["requester"]; ?></span></a>
+                                                    <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" target="_blank"  > <?php echo $res_search["subject"]; ?></span></a>
 
                                                     <?php
                                                     if($res_search["add_task"] ==''){

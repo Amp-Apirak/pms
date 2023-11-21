@@ -33,7 +33,7 @@
                         </div>
                         <div class="info">
                             <a href="profile.php" class=""><?php echo ($_SESSION['contact_name']);?></a><br>
-                            <a href="profile.php" class="">Your Welcome</a><br>
+                            <a href="profile.php" class=""><?php echo ($_SESSION['position']);?></a><br>
                             <a href="logout.php" class=""><i class="nav-icon fa fa-sign-in">Logout</i></a>
                         </div>
                     </div>

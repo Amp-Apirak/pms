@@ -37,6 +37,8 @@
         $_SESSION['contact_id'] = $row['contact_id'];
         $_SESSION['username'] = $row['username'];
         $_SESSION['contact_name'] = $row['contact_name'];
+        $_SESSION['role'] = $row['role'];
+        $_SESSION['position'] = $row['position'];
 
 
         //เช็คว่ามีตัวแปร session อะไรบ้าง
