@@ -39,7 +39,7 @@
       <a href="login.php" class="h1"><b>Innovation </b>Test Bug</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">เลือกชื่อผู้เข้าใช้งาน แล้วกด"ตกลง"</p>
 
       <form action="../pms/templated/cklogin.php" method="post">
 
