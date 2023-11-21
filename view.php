@@ -432,7 +432,7 @@
                                         $sMessage .= "-------------------------- \n";
                                         $sMessage .= "✅ คำแนะ/แก้ไข : ".$add_task."\n\n";
 
-                                        $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/up/view.php?id=$_GET[id] \n\n";
+                                        $sMessage .= "ติดตามงานได้ที่ Link Web: http://58.137.58.163/pms/view.php?id=$_GET[id] \n\n";
                                         $sMessage .= "@All \n";
                             
                                         
