@@ -606,13 +606,13 @@
                                             </td>
 
                                             <td  scope="col" class="" id="mylayout_2" > 
-                                                    <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" target="_blank"  > <?php echo $res_search["subject"]; ?></a>
+                                                    <a href="view.php?id=<?php echo $res_search["work_id"]; ?>" target="_blank"  > <?php echo $res_search["subject"]; ?> <span class='badge badge-danger'> Owner : <?php echo $res_search["requester"]; ?></span></a>
 
                                                     <?php
                                                     if($res_search["add_task"] ==''){
                                                         echo " ";
                                                     }else{
-                                                        echo "<div><span class='badge badge-warning'><b><u>Comment:</b></u></span> <small>{$res_search["add_task"]}</small> </div>
+                                                        echo "<div><span class='badge badge-warning'><b><u>Comment:</b></u></span> <small>{$res_search["add_task"]} </small></div>
                                                         <span class='badge badge-info'>{$res_search["staff_edit"]} | {$res_search["date_edit"]}</span>";
                                                     }
                                                     ?>
