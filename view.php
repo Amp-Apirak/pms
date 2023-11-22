@@ -496,7 +496,11 @@
                                                 <select class="form-control select2" name="v_status"
                                                     style="width: 100%;">
                                                     <option selected="selected"><?= $rr->status; ?></option>
+
+                                                        <?php if ($_SESSION["role"] == "a") { ?>
                                                         <option>Approve</option>
+                                                        <?php } ?>
+                                                        
                                                         <option>On Process</option>
                                                         <option>Done</option>
                                                         <option>Pending</option>
