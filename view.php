@@ -273,7 +273,7 @@
                                             <td scope="col" class="  " height="" width="">
                                                 <?php echo $res_search["add_task"]; ?> 
                                             </td>
-                                            <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["staff_crt"]; ?></td>
+                                            <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["requester"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["staff_edit"]; ?></td>
                                             <td scope="col" class="text-nowrap text-center " height="" width=""><?php echo $res_search["date_edit"]; ?></td>
                                         </tr>
