@@ -419,7 +419,7 @@
                                         date_default_timezone_set("Asia/Bangkok");
                             
                                         $sToken = "ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu"; //ELxH8LTeDYRfZjPrRzVoDa7aVLHgN9d0VgifAJiKrQu
-                                        $sMessage = "🕵️‍♀️⭐ ".$staff_edit. ⭐🕵️‍♀️" **Update Ticket** \n\n";
+                                        $sMessage = "👉 ".$staff_edit." **Update Ticket** \n\n";
 
                                         $sMessage .= "Category: ".$category." \n";
                                         $sMessage .= "Type: ".$work_type." \n";
